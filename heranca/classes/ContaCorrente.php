@@ -16,7 +16,8 @@ class ContaCorrente extends Conta
 		$this->limite = $limite;
 	}
 
-	public function retirar(float $valor)
+	//a palavra final não permite que uma classe filha reescreva esse método
+	public final function retirar(float $valor)
 	{
 		if(($this->saldo + $this->limite) >= $valor)
 		{

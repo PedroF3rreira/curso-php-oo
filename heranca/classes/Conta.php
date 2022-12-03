@@ -1,8 +1,9 @@
 <?php 
 /**
  * tipo de operação especialização
+ * se uma classe tiver au menos um método abstrato a classe deve ser abstrata
  * **/
-class Conta
+abstract class Conta
 {
 	protected float $saldo;
 	protected string $agencia;
@@ -24,5 +25,8 @@ class Conta
 	{
 		return $this->saldo;
 	}
+
+	public abstract function retirar(float $valor);
+	
 
 }

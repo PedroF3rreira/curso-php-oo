@@ -1,7 +1,9 @@
 <?php 
 
-
-class ContaPoupanca extends Conta
+/**
+ * não permite que a classe seja extendida
+ * **/
+final class ContaPoupanca extends Conta
 {
 	
 	public function retirar(float $valor)
