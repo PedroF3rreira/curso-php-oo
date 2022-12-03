@@ -1,5 +1,7 @@
 <?php 
-
+/**
+ * tipo de operação especialização
+ * **/
 class Conta
 {
 	protected float $saldo;
