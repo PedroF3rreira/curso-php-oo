@@ -16,7 +16,7 @@ class Orcamento
 	//
 	//desacoplando classe orcamento da classe produto atraves de uma interface 
 	//criamos uma interface para garantir que nossa classe passada tenha a implementação do
-	//método getPreco e getDescricao que são utilizadas na classe orcamento
+	//método getPreco que são utilizadas na classe orcamento
 	public function adicionarItem(OrcavelInterface $item, int $qtd)
 	{
 		$this->itens[] = [$qtd, $item];
