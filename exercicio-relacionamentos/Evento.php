@@ -32,9 +32,9 @@ class Evento
 		return $this->palestras;
 	}
 
-	public function adicionaPalestra(Palestra $palestra)
+	public function adicionaPalestra($nome, $data, $turno, $duracao, $tema, $sala, $ministro)
 	{
-		$this->palestras[] = $palestra;
+		$this->palestras[] = new Palestra($nome, $data, $turno, $duracao, $tema, $sala, $ministro);
 	}
 
 	public function setData($data)

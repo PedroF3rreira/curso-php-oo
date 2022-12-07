@@ -22,14 +22,14 @@ echo $p3->getNome()."<br>";
 
 echo "<br>===========Eventos criados==========<br>";
 $e1 = new Evento('Mult X', 'cidade nova', '22-05-2022', '08:30:20', '17:30:00');
-$e1->adicionaPalestra($p1);
-$e1->adicionaPalestra($p3);
+$e1->adicionaPalestra('oo php','25-10-2022', 'N', '1', 'oo', 'a21', $m);
+$e1->adicionaPalestra('javascript','30-10-2022', 't', '3', 'jvascript', 'a30', $m);
 
 echo $e1->getNome()."<br>";
 
 $e2 = new Evento('Super Evento', 'cidade goias', '14-05-2022', '08:30:20', '17:30:00');
-$e2->adicionaPalestra($p2);
-$e2->adicionaPalestra($p3);
+$e2->adicionaPalestra('Progamando com dart','20-10-2022', 'd', '2', 'dart', 'a21', $m);
+$e2->adicionaPalestra('Progamando com dart part2','20-10-2022', 'd', '8', 'dart', 'a1', $m);
 
 echo $e2->getNome()."<br>";
 
@@ -45,12 +45,13 @@ var_dump($part);
 
 echo"<br>====================Participantes se increve em evento============<br>";
 $part->inscreveEvento($e1);
-$part->inscreveEvento($e2);
 var_dump($part);
 
 echo"<br>====================Participantes se increve em palestra============<br>";
-$part->inscrevePalestra($p1);
-$part->inscrevePalestra($p2);
-$part->inscrevePalestra($p3);
+$palestras = $e1->getPalestras();
+echo"<br>Numero de palestras ".count($palestras)."<br>";
+$part->inscrevePalestra($palestras[0]);
+$part->inscrevePalestra($palestras[1]);
+$part->inscrevePalestra($palestras[0]);
 
 
