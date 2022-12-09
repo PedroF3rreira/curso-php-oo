@@ -25,6 +25,7 @@ class Cesta
 	 * não prescisamos instanciar esse objeto
 	 * é diferente da composição depois de excluir a cestas os
 	 * objetos produtos vão continuar em memoria
+	 * na agregação temos um relacionamento n para n
 	 * @param  Produto $produto [description]
 	 * @return [type]           [description]
 	 */
