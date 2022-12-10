@@ -6,7 +6,7 @@ function lista_combo_cidades()
 		$conn = new PDO('mysql:host=localhost;dbname=livro', 'root', '');
 		$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);	
 
-		$result = $conn->query("SELECT * FROM cidade");
+		$result = $conn->query("SELECT * FROM cidades");
 
 		$output = '';
 
@@ -17,7 +17,7 @@ function lista_combo_cidades()
 				$id = $row['id'];
 				$nome = $row['nome'];
 
-				$output .= "<option value={'$id'}> {$nome} </option>";
+				$output .= "<option value='$id'>$nome</option>";
 			}
 		}
 

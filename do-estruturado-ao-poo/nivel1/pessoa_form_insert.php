@@ -27,7 +27,7 @@
 			<label>Bairro:</label>
 			<input type="text" name="bairro">
 		</div>
-
+		
 		<div class="form-control">
 			<label>Telefone:</label>
 			<input type="text" name="telefone">
@@ -39,7 +39,7 @@
 		</div>
 
 		<div class="form-control">
-			<label>Cidade:</label>
+			<label>Cidades:</label>
 			<select name="id_cidade">
 				<?php 
 					require_once 'lista_combo_cidades.php'; 

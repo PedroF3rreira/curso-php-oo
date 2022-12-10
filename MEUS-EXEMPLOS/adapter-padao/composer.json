@@ -1,0 +1,17 @@
+{
+    "name": "administrador/adapter-padao",
+    "description": "exemplos de padroes de projeto mais usados",
+    "license": "mit",
+    "autoload": {
+        "psr-4": {
+            "DesignPatterns\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Pedro Daniel",
+            "email": "pedro-edu19@outlook.com"
+        }
+    ],
+    "require": {}
+}
