@@ -11,7 +11,7 @@
 	<div>
 		<p>
 			<?php
-				if($_SESSION['flash'])
+				if(!empty($_SESSION['flash']))
 				{
 					echo $_SESSION['flash'];
 					$_SESSION['flash'] = '';

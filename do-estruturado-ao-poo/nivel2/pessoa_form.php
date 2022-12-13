@@ -17,14 +17,13 @@
 			
 			$row = mysqli_fetch_assoc($result);
 
-			var_dump($row);
 
-			$id = 		$row['id'];
-			$nome = 	$row['nome'];
-			$endereco = $row['endereco'];
-			$bairro =	$row['bairro'];
-			$telefone = $row['telefone'];
-			$email = 	$row['email'];
+			$id 		= 	$row['id'];
+			$nome 		= 	$row['nome'];
+			$endereco 	= 	$row['endereco'];
+			$bairro 	=	$row['bairro'];
+			$telefone 	= 	$row['telefone'];
+			$email 		= 	$row['email'];
 		}
 
 	 ?>
