@@ -23,5 +23,6 @@
 			<?php require 'list_pessoas.php' ?>
 		</tbody>
 	</table>
+	<a href="pessoa_form_insert.php" title="adicionar pessoa">Adicionar</a>
 </body>
 </html>

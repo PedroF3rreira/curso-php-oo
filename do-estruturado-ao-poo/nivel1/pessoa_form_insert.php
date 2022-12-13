@@ -52,5 +52,6 @@
 			<input type="submit" value="Enviar">
 		</div>
 	</form>
+	<a href="index.php">Voltar para uma lista</a>
 </body>
 </html>

@@ -1,6 +1,6 @@
 <?php 
 
-function lista_combo_cidades()
+function lista_combo_cidades($id_cidade = '')
 {
 	try {
 		$conn = new PDO('mysql:host=localhost;dbname=livro', 'root', '');
@@ -17,7 +17,10 @@ function lista_combo_cidades()
 				$id = $row['id'];
 				$nome = $row['nome'];
 
-				$output .= "<option value='$id'>$nome</option>";
+				$selected = ($id == $id_cidade ? 'selected' : '');
+
+				$output .= "<option {$selected} value='$id'>$nome</option>";
+				
 			}
 		}
 
