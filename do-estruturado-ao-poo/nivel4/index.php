@@ -1,5 +1,5 @@
 <?php 
-	require_once 'pessoa_db.php';
+	require_once 'db/pessoa_db.php';
 
 	if(!empty($_GET['action']) && ($_GET['action'] == 'delete') )
 	{
@@ -12,19 +12,19 @@
 
 		
 	}
-
+	$pessoas = get_pessoas();
 	$items = "";
-	foreach(get_pessoas() as $row)
+	foreach( $pessoas as $pessoa)
 	{
 		
 		$item = file_get_contents('html/item.html');
-		$item = str_replace('{id}', $row['id'], $item);
-		$item = str_replace('{nome}', $row['nome'], $item);
-		$item = str_replace('{endereco}', $row['endereco'], $item);
-		$item = str_replace('{bairro}', $row['bairro'], $item);
-		$item = str_replace('{telefone}', $row['telefone'], $item);
-		$item = str_replace('{email}', $row['email'], $item);
-		$item = str_replace('{cidade}', $row['cidade_nome'], $item);		
+		$item = str_replace('{id}', $pessoa['id'], $item);
+		$item = str_replace('{nome}', $pessoa['nome'], $item);
+		$item = str_replace('{endereco}', $pessoa['endereco'], $item);
+		$item = str_replace('{bairro}', $pessoa['bairro'], $item);
+		$item = str_replace('{telefone}', $pessoa['telefone'], $item);
+		$item = str_replace('{email}', $pessoa['email'], $item);
+		$item = str_replace('{cidade}', $pessoa['cidade_nome'], $item);		
 		
 		$items .= $item;
 	}
