@@ -2,12 +2,6 @@
 
 	$conn = mysqli_connect('localhost', 'root', '', 'livro');
 
-	$sql = "SELECT *, 
-		pessoas.nome as nome, 
-		pessoas.id as id_pessoa, cidades.nome as cidade 
-	FROM pessoas INNER JOIN cidades ON pessoas.id_cidade=cidades.id";
-
-	$result = mysqli_query($conn, $sql);
 
 	if(!empty($_GET['action']) && ($_GET['action'] == 'delete') )
 	{
@@ -18,15 +12,20 @@
 		
 		if($success)
 		{
-			$_SESSION['flash'] = 'Registro deletado com suscesso';
-			header('location:index.php');
+			echo "registro excluido com suscesso!";
 		}
 
 		
 	}
+
+	$sql = "SELECT *, 
+		pessoas.nome as nome, 
+		pessoas.id as id_pessoa, cidades.nome as cidade 
+	FROM pessoas INNER JOIN cidades ON pessoas.id_cidade=cidades.id";
+
+	$result = mysqli_query($conn, $sql);
 	
 	$items = "";
-
 	while($row = mysqli_fetch_assoc($result)){
 		
 		$item = file_get_contents('html/item.html');
@@ -45,7 +44,6 @@
 	$list = str_replace('{items}', $items, $list);
 
 	echo $list;
-	
 	
 	mysqli_close($conn);
 ?>
