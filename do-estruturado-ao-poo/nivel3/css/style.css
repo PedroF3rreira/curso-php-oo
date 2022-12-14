@@ -1,0 +1,37 @@
+form{
+	width: 30%;
+}
+.form-control{
+	display: flex;
+	justify-content: space-between;
+}
+
+.form-control input{
+	margin-top: 5px;
+	padding: 5px;
+	width: 70%;
+	border: 1px solid rgba(0, 0, 0, .3);
+}
+
+.form-control input[type='submit']{
+	width: 100%;
+	margin-top: 15px;
+}
+
+.form-control input[readonly]{
+	background-color: rgba(0,0,0,.1);
+}
+
+table{
+	width: 70%;
+	margin: auto;
+	border: 1px solid rgba(0,0,0,.3);
+
+}
+
+th, 
+td{
+	border-left: 1px solid rgba(0, 0, 0, .3);
+	border-bottom: 1px solid rgba(0, 0, 0, .3);
+	padding: 8px;
+}
