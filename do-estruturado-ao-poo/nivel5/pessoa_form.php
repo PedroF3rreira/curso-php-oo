@@ -1,5 +1,6 @@
 <?php 
 	require_once 'db/pessoa_db.php';
+	require_once 'classes/Pessoa.php';
 
 	$pessoa = [];
 	
@@ -15,33 +16,17 @@
 	{
 		if( $_REQUEST['action'] == 'edit')
 		{
-			if(!empty($_GET['id']) && is_numeric($_GET['id']))
+			if(!empty($_GET['id']))
 			{
 				
-				$pessoa = get_pessoa($_GET['id']);
+				$pessoa = Pessoa::find( (int) $_GET['id']);
 			}
 		}
 		else if($_REQUEST['action'] == 'save')
 		{
-			$pessoa['id'] 	= $_POST['id'];
-			$pessoa 		= $_POST; 
+			$pessoa = $_POST; 
 
-			if(!empty($pessoa['id']))
-			{
-				
-				if(update_pessoa($pessoa))
-				{
-					echo "Editado com suscesso!";
-				}
-			}
-			else
-			{
-				
-				if(insert_pessoa($pessoa))
-				{
-					echo "registro adicionado com suscesso";
-				}
-			}
+			Pessoa::save($pessoa);
 		}
 
 	}

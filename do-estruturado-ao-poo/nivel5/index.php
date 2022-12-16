@@ -2,21 +2,18 @@
 	require_once 'db/pessoa_db.php';
 	require_once 'classes/Pessoa.php';
 
-	Pessoa::find(31);
-	
-
 	if(!empty($_GET['action']) && ($_GET['action'] == 'delete') )
 	{
 		$id = (int) $_GET['id'];
 
-		if(delete_pessoa($id))
+		if(Pessoa::delete($id))
 		{
 			echo "registro excluido com suscesso!";
 		}
 
 		
 	}
-	$pessoas = get_pessoas();
+	$pessoas = Pessoa::all();
 	$items = "";
 	foreach( $pessoas as $pessoa)
 	{
