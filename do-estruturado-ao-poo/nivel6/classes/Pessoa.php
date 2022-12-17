@@ -5,11 +5,29 @@
  */
 class Pessoa
 {
+	private static $pdo;
 	
+	public static function getConnection()
+	{	
+		if(empty(self::$pdo))
+		{
+			$db = parse_ini_file('config/config.ini');
+			$name = $db['name'];
+			$host = $db['host'];
+			$user = $db['user'];
+			$pass = $db['pass'];
+
+			self::$pdo = new PDO("mysql:dbname={$name};host={$host}", $user, $pass);
+			self::$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		}
+
+		return self::$pdo;
+		
+	}
+
 	public static function find($id)
 	{
-		$pdo = new PDO('mysql:dbname=livro;host=localhost', 'root', '');
-		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		$pdo = self::getConnection();
 		
 		$result = $pdo->query("SELECT pessoas.*, cidades.nome as nome_cidade FROM pessoas 
 					INNER JOIN cidades ON pessoas.id_cidade=cidades.id 
@@ -21,9 +39,7 @@ class Pessoa
 
 	public static function all()
 	{
-		
-		$pdo = new PDO('mysql:dbname=livro;host=localhost', 'root', '');
-		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		$pdo = self::getConnection();
 
 		$result = $pdo->query("SELECT  
 			pessoas.*, 
@@ -38,9 +54,7 @@ class Pessoa
 
 	public static function delete($id)
 	{
-
-		$pdo = new PDO('mysql:dbname=livro;host=localhost', 'root', '');
-		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		$pdo = self::getConnection();
 
 		$result = $pdo->query("DELETE FROM pessoas WHERE id = $id");
 
@@ -50,9 +64,9 @@ class Pessoa
 
 	public static function save(array $pessoa)
 	{
-		$pdo = new PDO('mysql:dbname=livro;host=localhost', 'root', '');
-		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		
+		$pdo = self::getConnection();
+
 		if(empty($pessoa['id']))
 		{
 			$result = $pdo->query("INSERT INTO pessoas (nome, endereco, bairro, telefone, email, id_cidade)
