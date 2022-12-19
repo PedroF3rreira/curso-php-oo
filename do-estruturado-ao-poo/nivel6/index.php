@@ -1,5 +1,7 @@
 <?php 
-	require_once 'classes/Pessoa.php';
+require_once 'classes/Pessoa.php';
+
+try{
 
 	if(!empty($_GET['action']) && ($_GET['action'] == 'delete') )
 	{
@@ -9,14 +11,14 @@
 		{
 			echo "registro excluido com suscesso!";
 		}
-
-		
 	}
+	
 	$pessoas = Pessoa::all();
+	
 	$items = "";
+
 	foreach( $pessoas as $pessoa)
 	{
-		
 		$item = file_get_contents('html/item.html');
 		$item = str_replace('{id}', $pessoa['id'], $item);
 		$item = str_replace('{nome}', $pessoa['nome'], $item);
@@ -33,4 +35,10 @@
 	$list = str_replace('{items}', $items, $list);
 
 	echo $list;
+	}
+catch(PDOException $e)
+{
+	echo "Um erro Ocorreu ".$e->getMessage();
+	die();
+}
 ?>

@@ -51,7 +51,7 @@
 		}
 
 	}
-	catch(Exception $e)
+	catch(PDOException $e)
 	{
 		echo "Um erro Ocorreu ".$e->getMessage();
 		die();
