@@ -29,9 +29,12 @@ class Pessoa
 	{
 		$pdo = self::getConnection();
 		
-		$result = $pdo->query("SELECT pessoas.*, cidades.nome as nome_cidade FROM pessoas 
+		$result = $pdo->prepare("SELECT pessoas.*, cidades.nome as nome_cidade FROM pessoas 
 					INNER JOIN cidades ON pessoas.id_cidade=cidades.id 
-				WHERE pessoas.id = $id ");
+				WHERE pessoas.id = :id ");
+		
+		$result->execute(['id' => $id]);
+
 		$data = $result->fetch();
 
 		return $data;
@@ -56,8 +59,9 @@ class Pessoa
 	{
 		$pdo = self::getConnection();
 
-		$result = $pdo->query("DELETE FROM pessoas WHERE id = $id");
-
+		$result = $pdo->prepare("DELETE FROM pessoas WHERE id = :id");
+		$result->execute(['id' => $id]);
+		
 		return $result;
 		
 	}
@@ -69,21 +73,39 @@ class Pessoa
 
 		if(empty($pessoa['id']))
 		{
-			$result = $pdo->query("INSERT INTO pessoas (nome, endereco, bairro, telefone, email, id_cidade)
-				VALUES ('{$pessoa['nome']}', '{$pessoa['endereco']}', '{$pessoa['bairro']}', '{$pessoa['telefone']}', '{$pessoa['email']}', '{$pessoa['id_cidade']}')");
+			$result = $pdo->prepare("INSERT INTO pessoas (nome, endereco, bairro, telefone, email, id_cidade)
+				VALUES (:nome, :endereco, :bairro, :telefone, :email, :id_cidade)");
+			$result->execute([
+				'nome' => $pessoa['nome'],
+				'endereco' => $pessoa['endereco'],
+				'bairro' => $pessoa['bairro'],
+				'telefone' => $pessoa['telefone'],
+				'email' => $pessoa['email'],
+				'id_cidade' => $pessoa['id_cidade']
+			]);
 
 			return $result;
 		}
 		else{
 
-			$result = $pdo->query("UPDATE pessoas SET 
-					nome 		= '{$pessoa['nome']}',
-					endereco 	= '{$pessoa['endereco']}',
-					bairro 		= '{$pessoa['bairro']}',
-					telefone 	= '{$pessoa['telefone']}',
-					email 		= '{$pessoa['email']}',
-					id_cidade 	= '{$pessoa['id_cidade']}'
-					WHERE id = '{$pessoa['id']}'");
+			$result = $pdo->prepare("UPDATE pessoas SET 
+					nome 		= :nome,
+					endereco 	= :endereco,
+					bairro 		= :bairro,
+					telefone 	= :telefone,
+					email 		= :email,
+					id_cidade 	= :id_cidade
+					WHERE id = :id");
+			$result->execute([
+				'nome' => $pessoa['nome'],
+				'endereco' => $pessoa['endereco'],
+				'bairro' => $pessoa['bairro'],
+				'telefone' => $pessoa['telefone'],
+				'email' => $pessoa['email'],
+				'id_cidade' => $pessoa['id_cidade'],
+				'id' => $pessoa['id']
+			]);
+
 			return $result;
 		}
 	}
