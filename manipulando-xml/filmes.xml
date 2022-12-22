@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<filmes>
+    <filme id="1">
+        <titulo>O XML veste prada</titulo>
+        <resumo>O filme mostra a elegância da XML na representação de dados estruturados e semi estruturados.</resumo>
+        
+        <genero>Aventura</genero>
+        <genero>Documentário</genero>
+        
+        <elenco>
+            <ator>Mark UPlanguage</ator>
+            <ator>Mary well-Formed</ator>
+            <ator>Sedna D. Atabase</ator>
+        </elenco>
+        
+        <Duração>
+            1 hora
+        </Duração>
+
+        <qualidades>
+            <qualidade qualidade="hd" resolucao="720p"/>
+            <qualidade qualidade="full-hd" resolucao="1080p"/>
+            <qualidade qualidade="4k" resolucao="4985p"/>
+        </qualidades>
+    </filme>
+</filmes>
