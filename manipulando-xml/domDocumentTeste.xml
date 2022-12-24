@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<produtos>
+  <produto id="1">
+    <descricao>Bola de gude</descricao>
+    <preco>200</preco>
+    <quantidade>210</quantidade>
+  </produto>
+  <produto id="2">
+    <descricao>Pipa do sport</descricao>
+    <preco>10</preco>
+    <quantidade>21</quantidade>
+  </produto>
+</produtos>

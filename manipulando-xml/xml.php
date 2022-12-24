@@ -16,6 +16,7 @@ foreach($filmes->filme as $filme)
 
 }
 ///altera o arquivo em mémoria
+//adicionando tags
 //$filmes->filme->addChild('Duração', "1 hora");
 
 //exibe o arquivo em formata xml
