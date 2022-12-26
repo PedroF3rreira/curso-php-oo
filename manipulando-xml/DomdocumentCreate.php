@@ -13,6 +13,12 @@ $listProducts = [
 		'quantidade' => 21,
 		'preco' => 10 
 	],
+	[
+		'id' => 3,
+		'descricao' => 'Pião de corda',
+		'quantidade' => 124,
+		'preco' => 15.99 
+	],
 ];
 
 $doc = new DOMDocument('1.0', 'UTF-8');

@@ -1,6 +1,6 @@
 <?php 
 
-$doc = new DOMDocument(1.0, "UTF-8");
+$doc = new DOMDocument();
 
 //carrega arquivo em um objeto domDocument
 $doc->load('./filmes.xml');

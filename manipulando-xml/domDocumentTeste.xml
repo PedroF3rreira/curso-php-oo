@@ -10,4 +10,9 @@
     <preco>10</preco>
     <quantidade>21</quantidade>
   </produto>
+  <produto id="3">
+    <descricao>Pião de corda</descricao>
+    <preco>15.99</preco>
+    <quantidade>124</quantidade>
+  </produto>
 </produtos>
