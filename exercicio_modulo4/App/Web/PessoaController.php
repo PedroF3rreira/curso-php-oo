@@ -36,7 +36,10 @@ class PessoaController
 	public function saveXML()
 	{
 		$pessoas = (new Pessoa)->load();
+		
 		$this->allToXML(time().'pessoa', $pessoas);
+		
+		header('location: http://localhost/curso-php-oo/exercicio_modulo4/');
 	}
 }
 

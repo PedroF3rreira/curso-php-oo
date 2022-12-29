@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pessoas>
+  <pessoa>
+    <nome>Pedro Daniel da Silva Ferreira</nome>
+    <endereco>rua 8 de maio 177</endereco>
+  </pessoa>
+  <pessoa>
+    <nome>Elias José da Silva</nome>
+    <endereco>rua general sanpaio n135</endereco>
+  </pessoa>
+  <pessoa>
+    <nome>Pedro Daniel da Silva Ferreiraa\</nome>
+    <endereco>Rua 8 de maio </endereco>
+  </pessoa>
+  <pessoa>
+    <nome>moises vieara da sil</nome>
+    <endereco>rua 8 de maio 177</endereco>
+  </pessoa>
+</pessoas>

@@ -24,7 +24,10 @@ trait ObjectConvert
 			$pessoa->appendChild($xml->createElement('nome', $item['nome']));
 			$pessoa->appendChild($xml->createElement('endereco', $item['endereco']));
 
-			$xml->save('pessoa_xml.xml');
+			if(!$xml->save($filename.'.xml', 1))
+			{
+				throw new Exception("Não foi possivel salvar arquivo");
+			}
 		}
 	}
 }
