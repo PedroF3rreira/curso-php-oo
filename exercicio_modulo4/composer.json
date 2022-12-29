@@ -12,5 +12,7 @@
             "email": "pedro-edu19@outlook.com"
         }
     ],
-    "require": {}
+    "require": {
+        "twig/twig": "^3.5"
+    }
 }
