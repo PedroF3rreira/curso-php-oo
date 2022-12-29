@@ -1,0 +1,16 @@
+{
+    "name": "administrador/exercicio_modulo4",
+    "description": "exercicio",
+    "autoload": {
+        "psr-4": {
+            "App\\": "App/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Pedro Daniel",
+            "email": "pedro-edu19@outlook.com"
+        }
+    ],
+    "require": {}
+}
