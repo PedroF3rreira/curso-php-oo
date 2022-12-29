@@ -3,12 +3,13 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title></title>
+	<title>{% block title %}{% endblock title %}</title>
 </head>
 <body>
-	<h1>Testando Twig</h1>
-	{% for pessoa in pessoas %}
-		<li>{{ pessoa['nome'] }}</li>
-	{% endfor %}
+	<main>
+
+		{% block content %}
+		{% endblock content%}
+	</main>
 </body>
 </html>
