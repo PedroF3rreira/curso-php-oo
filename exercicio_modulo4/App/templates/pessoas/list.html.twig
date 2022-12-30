@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block content %}
-
+<h1>{{ title }}</h1>
 <table  border="1" width="100%">
 	<thead>
 		<th>id</th>
@@ -22,5 +22,19 @@
 		{% endfor %}
 	</tbody>
 </table>
-<a href="http://localhost/curso-php-oo/exercicio_modulo4/?class=PessoaController&method=saveXML">Gerar xml</a>
+
+<a href="http://localhost/progamacao-php-oo-pablo/exercicio_modulo4/?class=PessoaController&method=saveXML">
+Gerar xml
+</a><br>
+
+<a href="http://localhost/progamacao-php-oo-pablo/exercicio_modulo4/?class=PessoaController&method=saveJson">
+ | Gerar json
+</a><br>
+
+<a href="http://localhost/progamacao-php-oo-pablo/exercicio_modulo4/?class=PessoaController&method=loadJson">
+ gerar tabela do json
+</a><br>
+<a href="http://localhost/progamacao-php-oo-pablo/exercicio_modulo4/?class=PessoaController&method=loadXML">
+ gerar tabela do xml
+</a>
 {% endblock %}
