@@ -30,5 +30,5 @@ try
 }	
 catch(Exception $e)
 {
-
+	echo "Um erro ocorreu ".$e->getMessage();
 }
