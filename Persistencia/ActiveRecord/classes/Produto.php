@@ -58,7 +58,7 @@ class Produto
 
 	public function save()
 	{	
-		if(!$this->id)
+		if(!isset($this->data['id']))
 		{
 			$sql = "INSERT INTO produtos 
 			(	
@@ -93,6 +93,8 @@ class Produto
 				'data_cadastro' => $this->data_cadastro, 
 				'origem' => $this->origem
 			]);
+
+			$this->setId(self::$conn->lastInsertId());
 		}
 		else
 		{
@@ -138,5 +140,10 @@ class Produto
 	{
 		$this->preco_custo = $custo;
 		$this->estoque += $quantidade;
+	}
+
+	public function setId($id)
+	{
+		$this->data['id'] = $id;
 	}
 }
