@@ -128,4 +128,15 @@ class Produto
 		$result = self::$conn->prepare("DELETE FROM produtos WHERE id = :id");
 		return $result->execute(['id' => $this->id]);
 	}
+
+	public function getMargemLucro()
+	{
+		return (($this->preco_venda - $this->preco_custo) / $this->preco_custo) * 100;
+	}
+
+	public function registrarCompra($custo, $quantidade)
+	{
+		$this->preco_custo = $custo;
+		$this->estoque += $quantidade;
+	}
 }
