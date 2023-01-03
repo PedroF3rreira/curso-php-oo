@@ -24,11 +24,11 @@ class Connection
 
 		switch ($type) {
 			case 'pgsql':
-				$port = isset($db['port'])??'5432';
+				$port = isset($db['port'])?$db['port']:'5432';
 				$conn = new PDO('pgsql:dbname={$dbname}; user={$user}; password={$password}; host={$host}; port={$port}');
 				break;
 			case 'mysql':
-				$port = isset($db['port'])??'3306';
+				$port = isset($db['port'])?$db['port']:'3306';
 				$conn = new PDO("mysql:dbname={$dbname};host={$host}", $user, $password);
 				break;
 			case 'sqlite':
@@ -36,6 +36,6 @@ class Connection
 				break;
 		}
 		$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		return $conn
+		return $conn;
 	}
 }
