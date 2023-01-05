@@ -1,0 +1,25 @@
+2023-01-05 : SELECT * FROM produtos WHERE id = :id
+2023-01-05 : SELECT * FROM produtos WHERE id = :id
+2023-01-05 : SELECT * FROM produtos WHERE id = :id
+2023-01-05 12:01:01 : SELECT * FROM produtos WHERE id = :id
+2023-01-05 12:01:26 : INSERT INTO produtos 
+			(	
+				descricao, 
+				estoque, 
+				preco_custo, 
+				preco_venda, 
+				codigo_barras, 
+				data_cadastro, 
+				origem
+			) 
+			VALUES
+			(	
+				:descricao, 
+				:estoque, 
+				:preco_custo, 
+				:preco_venda, 
+				:codigo_barras, 
+				:data_cadastro, 
+				:origem
+			)
+2023-01-05 12:01:26 : SELECT * FROM produtos WHERE id = :id
