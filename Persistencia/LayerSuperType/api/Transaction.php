@@ -34,7 +34,7 @@ class Transaction
 		return self::$conn;
 	}
 
-	public function rollback()
+	public static function rollback()
 	{
 		if(self::$conn)
 		{

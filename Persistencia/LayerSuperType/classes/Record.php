@@ -1,9 +1,18 @@
 <?php
-
+/**
+ * classe Record é uma super classe utilizada para fazer a manipulação de dados
+ * com o banco de dados criada de forma gênerica para que as entidades do sistema 
+ * possam extendela e implementar suas propias regras de negócio
+ * **/
 abstract class Record
 {
 	private array $data;
 
+	/**
+	 * método construtor esta sendo usado para executar métodos 
+	 * da propia classe fazendo a busca no banco de dados pelo
+	 * id passado caso seja passado
+	 * **/
 	public function __construct($id = null)
 	{
 		if($id)
@@ -32,10 +41,9 @@ abstract class Record
  	{
  		if(isset($this->data[$prop]))
  		{
- 			return $this->date[$prop];
+ 			return $this->data[$prop];
  		}
  	}
-
 
 	public function __isset($prop)
 	{
@@ -44,9 +52,9 @@ abstract class Record
 
 	public function __clone()
 	{
-		if(isset($this->data[$fieldId]))
+		if(isset($this->data['id']))
 		{
-			unset($this->data[$fieldId]);
+			unset($this->data['id']);
 		}
 	}
 
@@ -66,9 +74,22 @@ abstract class Record
 		return $this->data;
 	}
 
+	public function toJson()
+	{
+		return json_encode($this->data);
+	}
+
+	public function fromJson($data)
+	{
+		if(isset($this->data))
+		{
+			return $this->data = json_decode($data);
+		}
+	}
+	
 	/**
 	 * pega valor da constante da classe filha 
-	 * atraves do objeto ativo na memoria que eta utilizando
+	 * atraves do objeto ativo na memoria que esta utilizando
 	 * os métodos do record
 	 * @return string
 	 */
@@ -105,11 +126,46 @@ abstract class Record
 
 	public function store()
 	{
+		if( empty($this->data['id']) || (!$this->load($this->data['id'])) )  
+		{
+			$sql = "INSERT INTO " . $this->getEntity() . '('.implode(',', array_keys($this->data)) .')' 
+			." VALUES (:descricao, :estoque, :preco_custo, :preco_venda, :codigo_barras, :data_cadastro, :origem)";
+
+		}
 		
+		if($conn = Transaction::get())
+		{
+			$result = $conn->prepare($sql);
+			Transaction::log($sql);
+			return $result->execute([
+				'descricao' 	=> $this->descricao,
+				'estoque' 		=> $this->estoque,
+				'preco_custo' 	=> $this->preco_custo,
+				'preco_venda' 	=> $this->preco_venda,
+				'codigo_barras' => $this->codigo_barras,
+				'data_cadastro' => $this->data_cadastro,
+				'origem' 		=> $this->origem,
+			]);			
+		}
+		else
+		{
+			throw new Exception('Não há transação ativa');
+		} 
 	}
 
 	public function delete()
 	{
 		
+		if($conn = Transaction::get())
+		{
+			Transaction::log($sql);
+
+			$result = $conn->prepare($sql);
+			
+		}
+		else
+		{
+			throw new Exception('Não há transação ativa');
+		} 
 	}
 }
