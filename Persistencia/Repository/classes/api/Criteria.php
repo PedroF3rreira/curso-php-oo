@@ -8,6 +8,7 @@ class Criteria
 	public function __construct()
 	{
 		$this->filters = [];
+		$this->properties = [];
 	}
 
 	public function add( $variavel, $compare, $value, $op_log = 'and' )
@@ -73,7 +74,7 @@ class Criteria
 
 	public function getProperty($property)
 	{
-		if($this->properties[$property])
+		if(isset($this->properties[$property]))
 		{
 			return $this->properties[$property];
 		}
