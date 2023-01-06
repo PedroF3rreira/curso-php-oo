@@ -90,13 +90,13 @@ abstract class ActiveRecord
 
 	private function format($value)
 	{
-		if(is_string($value) !empty($value))
+		if(is_string($value) && !empty($value))
 		{
-			return "'" . addcslashes($value) . "'";
+			return "'" . addslashes($value) . "'";
 		}
 		else if(is_bool($value))
 		{
-			return $value ? true : false;
+			return $value ? 'true' : 'false';
 		}
 		else if ($value !== '') 
 		{
@@ -104,7 +104,7 @@ abstract class ActiveRecord
 		}
 		else
 		{
-			return null;
+			return 'null';
 		}
 	}
 
@@ -115,9 +115,11 @@ abstract class ActiveRecord
 		{
 			if(is_scalar($value))
 			{
-
+				$newContent[$key] => $this->format($value);
 			}
 		}
+
+		return $newContent;
 	}
 
 }

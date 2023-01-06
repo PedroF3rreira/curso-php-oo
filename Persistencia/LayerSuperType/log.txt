@@ -17,3 +17,5 @@
 2023-01-05 03:01:12 : INSERT INTO produtos(descricao,estoque,preco_custo,preco_venda,codigo_barras,data_cadastro,origem) VALUES (descricao,?estoque,?preco_custo,?preco_venda,?codigo_barras,?data_cadastro,?origem)
 2023-01-05 04:01:35 : SELECT * FROM produtos WHERE id = :id
 2023-01-05 04:01:35 : INSERT INTO produtos(descricao,estoque,preco_custo,preco_venda,codigo_barras,data_cadastro,origem) VALUES (:descricao, :estoque, :preco_custo, :preco_venda, :codigo_barras, :data_cadastro, :origem)
+2023-01-06 05:01:47 : SELECT * FROM produtos WHERE id = :id
+2023-01-06 05:01:47 : INSERT INTO produtos(descricao,estoque,preco_custo,preco_venda,codigo_barras,data_cadastro,origem) VALUES (:descricao, :estoque, :preco_custo, :preco_venda, :codigo_barras, :data_cadastro, :origem)

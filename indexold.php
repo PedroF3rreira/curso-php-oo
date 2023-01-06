@@ -1,5 +1,10 @@
 <?php 
-declare(strict_types=1);
+
+$cep = file_get_contents('https://viacep.com.br/ws/53160360/xml/');
+$xml = new SimpleXMLElement($cep);
+var_dump(($xml->children())->cep);
+echo ($xml->children())->cep;
+//declare(strict_types=1);
 $nomes = [
 	'pedro',
 	'karina',
