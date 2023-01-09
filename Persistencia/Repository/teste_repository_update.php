@@ -12,27 +12,22 @@ try{
 	Transaction::open('estoque');
 	Transaction::setLogger(new LoggerTXT('logs.txt'));
 
-	$cri = new Criteria;
-	$cri->add('preco_venda', '>', 900);
-	$cri->add('preco_custo', '>', 1);
+	$c = new Criteria;
+	$c->add('preco_venda', '>', 22);
+	$c->add('origem', '=', 'L');
 
-	$repo = new Repository('Produto');
-	
-	$produtos = $repo->load($cri);
+	$r = new Repository('produto');
 
-	foreach($produtos as $produto)
+	$produtos = $r->load($c);
+	var_dump($produtos);
+	if($produtos)
 	{
-		echo "Descrição: ".$produto->descricao."<br>";
-		echo "Preço venda: ".$produto->preco_venda."<br>";
-
-		echo "<br><br>";
+		foreach($produtos as $produto)
+		{
+			$produto->preco_venda  *= 1.9;
+			$produto->store();
+		}
 	}
-	
-	echo $repo->count($cri);
-
-	//linha deleta registro de acordo com o criterio definido
-	// $cri->add('id', '=', 3);
-	// echo $repo->delete($cri);
 
 	Transaction::close();
 }

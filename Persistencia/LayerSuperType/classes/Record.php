@@ -132,6 +132,19 @@ abstract class Record
 			." VALUES (:descricao, :estoque, :preco_custo, :preco_venda, :codigo_barras, :data_cadastro, :origem)";
 
 		}
+		else
+		{
+			$sql = "UPDATE " .$this->getEntity() ." SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = ".$this->data['id'];
+		}
 		
 		if($conn = Transaction::get())
 		{

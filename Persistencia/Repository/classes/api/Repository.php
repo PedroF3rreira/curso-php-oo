@@ -12,7 +12,7 @@ class Repository
 	public function load(Criteria $criteria)
 	{
 		$sql = "SELECT * FROM " . constant($this->activeRecord . '::TABLENAME');
-
+			
 		if($criteria)
 		{
 			$expression = $criteria->dump();
@@ -21,6 +21,8 @@ class Repository
 			{
 				$sql .= " WHERE ".$expression;
 			}
+
+			Transaction::log($sql);
 
 			$order = $criteria->getProperty('order');
 			$limit = $criteria->getProperty('limit');
@@ -45,11 +47,14 @@ class Repository
 			{
 				$result = $conn->query($sql);
 				
-				$results = [];
-
-				while($row = $result->fetchObject($this->activeRecord))
+				if($result)
 				{
-					$results[] = $row;
+					$results = [];
+
+					while($row = $result->fetchObject($this->activeRecord))
+					{
+						$results[] = $row;
+					}
 				}
 			}
 			else
@@ -61,13 +66,57 @@ class Repository
 		}
 	}
 
-	public function delete($value='')
+	public function delete(Criteria $criteria)
 	{
-		// code...
+		$sql = "DELETE FROM " . constant( $this->activeRecord . "::TABLENAME" );
+		Transaction::log($sql);
+		if($criteria)
+		{
+			$expression = $criteria->dump();
+			if($expression)
+			{
+				$sql .= " WHERE " . $expression;
+			}
+		}
+
+		if($conn = Transaction::get())
+		{
+			return $conn->exec($sql);
+		}
+		else
+		{
+			throw new Exception("Transação não está aberta");
+		}
 	}
 
-	public function count($value='')
+	public function count(Criteria $criteria)
 	{
-		// code...
+		$sql = "SELECT count(*) FROM " . constant( $this->activeRecord . "::TABLENAME" );
+
+		Transaction::log($sql);
+		if($criteria)
+		{
+			$expression = $criteria->dump();
+			if($expression)
+			{	
+				$sql .= " WHERE " . $expression;
+			}
+		}
+
+		if($conn = Transaction::get())
+		{
+			$result = $conn->query($sql);
+
+			if($result)
+			{
+				$row = $result->fetch();
+
+				return $row[0];
+			}
+		}
+		else
+		{
+			throw new Exception("Transação não está aberta");
+		}
 	}
 }
