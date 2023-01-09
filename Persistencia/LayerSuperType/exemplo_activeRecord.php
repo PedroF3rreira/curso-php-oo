@@ -11,14 +11,18 @@ try
 	Transaction::open('estoque');
 	Transaction::setLogger(new LoggerTXT('log.txt'));
 
-	$p = new Produto(2);
+	$p = new Produto(5);
+	$p->descricao = "Editado";
+	$p->store();
+	
+	$p->delete(6);
 
 	var_dump($p);
 
 	var_dump($p->toJson());
 	
 	$p2 =  new Produto;
-	$p2->descricao = "macarrao com ovo";
+	$p2->descricao = "macarrao com ovo d'agua";
 	$p2->estoque = 20;
 	$p2->preco_custo = 12.9;
 	$p2->preco_venda = 22.9;
@@ -26,6 +30,10 @@ try
 	$p2->data_cadastro = date('Y-m-d');
 	$p2->origem = 'L';
 	$p2->store();
+
+
+	var_dump(Produto::find(6))
+
 	Transaction::close();
 }
 catch(Exception $e)
