@@ -754,3 +754,141 @@
 				data_cadastro = :data_cadastro,
 				origem = :origem
 				WHERE id = 17
+2023-01-09 05:01:22 : SELECT * FROM produtos WHERE (preco_venda >= 22 and origem = 'a')
+2023-01-09 05:01:35 : SELECT * FROM produtos WHERE (preco_venda >= 22 and origem = 'L')
+2023-01-09 05:01:35 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 05:01:35 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 7
+2023-01-09 05:01:35 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 05:01:35 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 8
+2023-01-09 05:01:35 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 05:01:35 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 9
+2023-01-09 05:01:35 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 05:01:35 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 10
+2023-01-09 05:01:35 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 05:01:35 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 11
+2023-01-09 05:01:35 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 05:01:35 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 12
+2023-01-09 05:01:35 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 05:01:35 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 13
+2023-01-09 05:01:35 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 05:01:35 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 14
+2023-01-09 05:01:35 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 05:01:35 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 15
+2023-01-09 05:01:35 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 05:01:35 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 16
+2023-01-09 05:01:35 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 05:01:35 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 17
+2023-01-09 05:01:54 : SELECT * FROM produtos WHERE (preco_venda >= 22 and origem = 'L')
+2023-01-09 05:01:54 : 
+2023-01-09 05:01:02 : SELECT * FROM produtos WHERE (preco_venda >= 22 and origem = 'L')
+2023-01-09 05:01:02 : DELETE FROM produtos WHERE id = :id
+2023-01-09 05:01:02 : DELETE FROM produtos WHERE id = :id
+2023-01-09 05:01:02 : DELETE FROM produtos WHERE id = :id
+2023-01-09 05:01:02 : DELETE FROM produtos WHERE id = :id
+2023-01-09 05:01:02 : DELETE FROM produtos WHERE id = :id
+2023-01-09 05:01:02 : DELETE FROM produtos WHERE id = :id
+2023-01-09 05:01:02 : DELETE FROM produtos WHERE id = :id
+2023-01-09 05:01:02 : DELETE FROM produtos WHERE id = :id
+2023-01-09 05:01:02 : DELETE FROM produtos WHERE id = :id
+2023-01-09 05:01:02 : DELETE FROM produtos WHERE id = :id
+2023-01-09 05:01:02 : DELETE FROM produtos WHERE id = :id
+2023-01-09 05:01:18 : SELECT * FROM produtos WHERE (preco_venda >= 22 and origem = 'L')

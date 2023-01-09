@@ -24,8 +24,8 @@ try{
 	{
 		foreach($produtos as $produto)
 		{
-			$produto->preco_venda  *= 1.9;
-			$produto->store();
+			
+			$produto->delete();
 		}
 	}
 

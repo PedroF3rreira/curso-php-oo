@@ -168,12 +168,14 @@ abstract class Record
 
 	public function delete()
 	{
+		$sql = "DELETE FROM " . $this->getEntity() . " WHERE id = :id";
 		
 		if($conn = Transaction::get())
 		{
 			Transaction::log($sql);
 
 			$result = $conn->prepare($sql);
+			$result->execute(['id' => $this->data['id']]);
 			
 		}
 		else
