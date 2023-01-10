@@ -6,7 +6,7 @@
  * **/
 abstract class Record
 {
-	protected array $data;
+	private array $data;
 
 	/**
 	 * método construtor esta sendo usado para executar métodos 
@@ -124,15 +124,6 @@ abstract class Record
 		} 
 	}
 
-	public static function find( $id )
-	{	
-		//retorna classe utilizada no momento
-		$class = get_called_class();
-		$obj = new $class;
-
-		return $obj->load($id);
-	}
-
 	public function store()
 	{
 		if( empty($this->data['id']) || (!$this->load($this->data['id'])) )  
@@ -143,20 +134,7 @@ abstract class Record
 		}
 		else
 		{
-<<<<<<< HEAD
-			$sql = "UPDATE " . $this->getEntity() 
-			. " SET 
-			descricao = :descricao, 
-			estoque = :estoque, 
-			preco_custo = :preco_custo,
-			preco_venda = :preco_venda,
-			codigo_barras = :codigo_barras,
-			data_cadastro = :data_cadastro,
-			origem = :origem
-
-			WHERE id = ". $this->data['id'];
-=======
-			$sql = "UPDATE " .$this->getEntity() ." SET 
+			$sql = "UPDATE " .$this->getEntity() . " SET 
 			
 				descricao = :descricao,
 				estoque = :estoque,
@@ -166,7 +144,6 @@ abstract class Record
 				data_cadastro = :data_cadastro,
 				origem = :origem
 				WHERE id = ".$this->data['id'];
->>>>>>> 8b6215c723d16bebefae8bf167ed454d4d71d670
 		}
 		
 		if($conn = Transaction::get())
@@ -189,18 +166,17 @@ abstract class Record
 		} 
 	}
 
-	public function delete($id = null)
+	public function delete()
 	{
-		$id = $id ? $id : $this->data['id'];
-
-		$sql = "DELETE FROM {$this->getEntity()} WHERE id = :id";
-
+		$sql = "DELETE FROM " . $this->getEntity() . " WHERE id = :id";
+		
 		if($conn = Transaction::get())
 		{
 			Transaction::log($sql);
 
 			$result = $conn->prepare($sql);
-			return $result->execute(['id' => (int) $id]);
+			$result->execute(['id' => $this->data['id']]);
+			
 		}
 		else
 		{

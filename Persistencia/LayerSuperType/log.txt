@@ -1,0 +1,21 @@
+2023-01-05 03:01:08 : SELECT * FROM produtos WHERE id = :id
+2023-01-05 04:01:23 : SELECT * FROM produtos WHERE id = :id
+2023-01-05 12:01:07 : SELECT * FROM produtos WHERE id = :id
+2023-01-05 12:01:36 : SELECT * FROM produtos WHERE id = :id
+2023-01-05 12:01:36 : INSERT INTO produtos(descricao, estoque, preco_custo, preco_venda, codigo_barras, data_cadastro, origem ) VALUES (:descricao, :estoque, :preco_custo, :preco_venda, :codigo_barras, :data_cadastro, :origem)
+2023-01-05 03:01:13 : SELECT * FROM produtos WHERE id = :id
+2023-01-05 03:01:13 : INSERT INTO produtos(descricao, estoque, preco_custo, preco_venda, codigo_barras, data_cadastro, origem ) VALUES (:descricao, :estoque, :preco_custo, :preco_venda, :codigo_barras, :data_cadastro, :origem)
+2023-01-05 03:01:34 : SELECT * FROM produtos WHERE id = :id
+2023-01-05 03:01:34 : INSERT INTO produtos(descricao, estoque, preco_custo, preco_venda, codigo_barras, data_cadastro, origem ) VALUES (:descricao, :estoque, :preco_custo, :preco_venda, :codigo_barras, :data_cadastro, :origem)
+2023-01-05 03:01:35 : SELECT * FROM produtos WHERE id = :id
+2023-01-05 03:01:35 : INSERT INTO produtos(implode(',', array_keys(Array)) ) VALUES (:descricao, :estoque, :preco_custo, :preco_venda, :codigo_barras, :data_cadastro, :origem)
+2023-01-05 03:01:54 : SELECT * FROM produtos WHERE id = :id
+2023-01-05 03:01:54 : INSERT INTO produtos(descricao,estoque,preco_custo,preco_venda,codigo_barras,data_cadastro,origem)VALUES(:descricao, :estoque, :preco_custo, :preco_venda, :codigo_barras, :data_cadastro, :origem)
+2023-01-05 03:01:32 : SELECT * FROM produtos WHERE id = :id
+2023-01-05 03:01:32 : INSERT INTO produtos(descricao,estoque,preco_custo,preco_venda,codigo_barras,data_cadastro,origem) VALUES (descricao,:estoque,:preco_custo,:preco_venda,:codigo_barras,:data_cadastro,:origem)
+2023-01-05 03:01:12 : SELECT * FROM produtos WHERE id = :id
+2023-01-05 03:01:12 : INSERT INTO produtos(descricao,estoque,preco_custo,preco_venda,codigo_barras,data_cadastro,origem) VALUES (descricao,?estoque,?preco_custo,?preco_venda,?codigo_barras,?data_cadastro,?origem)
+2023-01-05 04:01:35 : SELECT * FROM produtos WHERE id = :id
+2023-01-05 04:01:35 : INSERT INTO produtos(descricao,estoque,preco_custo,preco_venda,codigo_barras,data_cadastro,origem) VALUES (:descricao, :estoque, :preco_custo, :preco_venda, :codigo_barras, :data_cadastro, :origem)
+2023-01-06 05:01:47 : SELECT * FROM produtos WHERE id = :id
+2023-01-06 05:01:47 : INSERT INTO produtos(descricao,estoque,preco_custo,preco_venda,codigo_barras,data_cadastro,origem) VALUES (:descricao, :estoque, :preco_custo, :preco_venda, :codigo_barras, :data_cadastro, :origem)

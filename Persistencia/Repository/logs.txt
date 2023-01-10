@@ -1,0 +1,1032 @@
+2023-01-09 10:01:06 : SELECT * FROM produtos
+2023-01-09 10:01:06 : SELECT count(*) FROM produtos
+2023-01-09 10:01:01 : SELECT * FROM produtos WHERE (preco_venda > 900 and preco_custo > 1)
+2023-01-09 10:01:01 : SELECT count(*) FROM produtos
+2023-01-09 11:01:09 : SELECT * FROM produtos WHERE (produto_venda >= 22.9 and origem = 'L')
+2023-01-09 11:01:55 : SELECT * FROM produtos WHERE (preco_venda >= 22.9 and origem = 'L')
+2023-01-09 11:01:42 : SELECT * FROM produtos WHERE (preco_venda >= 22.9 and origem = 'L')
+2023-01-09 11:01:21 : SELECT * FROM produtos WHERE (preco_venda >= 22.9 and origem = 'L')
+2023-01-09 11:01:44 : SELECT * FROM produtos WHERE (preco_venda > 22 and origem = 'L')
+2023-01-09 11:01:44 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:06 : SELECT * FROM produtos WHERE (preco_venda > 22 and origem = 'L')
+2023-01-09 11:01:06 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:27 : SELECT * FROM produtos WHERE (preco_venda > 22 and origem = 'L')
+2023-01-09 11:01:27 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:27 : UPDATEprodutosSET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 7
+2023-01-09 11:01:51 : SELECT * FROM produtos WHERE (preco_venda > 22 and origem = 'L')
+2023-01-09 11:01:51 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:51 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 7
+2023-01-09 11:01:51 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:51 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 8
+2023-01-09 11:01:51 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:51 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 9
+2023-01-09 11:01:51 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:51 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 10
+2023-01-09 11:01:51 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:51 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 11
+2023-01-09 11:01:51 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:51 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 12
+2023-01-09 11:01:51 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:51 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 13
+2023-01-09 11:01:51 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:51 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 14
+2023-01-09 11:01:51 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:51 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 15
+2023-01-09 11:01:51 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:51 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 16
+2023-01-09 11:01:51 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:51 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 17
+2023-01-09 11:01:43 : SELECT * FROM produtos WHERE (preco_venda > 22 and origem = 'L')
+2023-01-09 11:01:43 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:43 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 7
+2023-01-09 11:01:43 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:43 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 8
+2023-01-09 11:01:43 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:43 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 9
+2023-01-09 11:01:43 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:43 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 10
+2023-01-09 11:01:43 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:43 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 11
+2023-01-09 11:01:43 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:43 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 12
+2023-01-09 11:01:43 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:43 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 13
+2023-01-09 11:01:43 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:43 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 14
+2023-01-09 11:01:43 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:43 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 15
+2023-01-09 11:01:43 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:43 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 16
+2023-01-09 11:01:43 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:43 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 17
+2023-01-09 11:01:38 : SELECT * FROM produtos WHERE (preco_venda > 22 and origem = 'L')
+2023-01-09 11:01:38 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:38 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 7
+2023-01-09 11:01:38 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:38 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 8
+2023-01-09 11:01:38 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:38 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 9
+2023-01-09 11:01:38 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:38 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 10
+2023-01-09 11:01:38 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:38 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 11
+2023-01-09 11:01:38 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:38 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 12
+2023-01-09 11:01:38 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:38 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 13
+2023-01-09 11:01:38 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:38 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 14
+2023-01-09 11:01:38 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:38 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 15
+2023-01-09 11:01:38 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:38 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 16
+2023-01-09 11:01:38 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:38 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 17
+2023-01-09 11:01:54 : SELECT * FROM produtos WHERE (preco_venda > 22 and origem = 'L')
+2023-01-09 11:01:54 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:54 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 7
+2023-01-09 11:01:54 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:54 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 8
+2023-01-09 11:01:54 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:54 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 9
+2023-01-09 11:01:54 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:54 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 10
+2023-01-09 11:01:54 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:54 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 11
+2023-01-09 11:01:54 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:54 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 12
+2023-01-09 11:01:54 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:54 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 13
+2023-01-09 11:01:54 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:54 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 14
+2023-01-09 11:01:54 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:54 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 15
+2023-01-09 11:01:54 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:54 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 16
+2023-01-09 11:01:54 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:54 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 17
+2023-01-09 11:01:09 : SELECT * FROM produtos WHERE (preco_venda > 22 and origem = 'L')
+2023-01-09 11:01:09 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:09 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 7
+2023-01-09 11:01:09 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:09 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 8
+2023-01-09 11:01:09 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:09 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 9
+2023-01-09 11:01:09 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:09 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 10
+2023-01-09 11:01:09 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:09 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 11
+2023-01-09 11:01:09 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:09 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 12
+2023-01-09 11:01:09 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:09 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 13
+2023-01-09 11:01:09 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:09 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 14
+2023-01-09 11:01:09 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:09 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 15
+2023-01-09 11:01:09 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:09 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 16
+2023-01-09 11:01:09 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:09 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 17
+2023-01-09 11:01:15 : SELECT * FROM produtos WHERE (preco_venda > 22 and origem = 'L')
+2023-01-09 11:01:15 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:15 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 7
+2023-01-09 11:01:15 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:15 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 8
+2023-01-09 11:01:15 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:15 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 9
+2023-01-09 11:01:15 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:15 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 10
+2023-01-09 11:01:15 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:15 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 11
+2023-01-09 11:01:15 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:15 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 12
+2023-01-09 11:01:15 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:15 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 13
+2023-01-09 11:01:15 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:15 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 14
+2023-01-09 11:01:15 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:15 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 15
+2023-01-09 11:01:15 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:15 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 16
+2023-01-09 11:01:15 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:15 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 17
+2023-01-09 05:01:22 : SELECT * FROM produtos WHERE (preco_venda >= 22 and origem = 'a')
+2023-01-09 05:01:35 : SELECT * FROM produtos WHERE (preco_venda >= 22 and origem = 'L')
+2023-01-09 05:01:35 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 05:01:35 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 7
+2023-01-09 05:01:35 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 05:01:35 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 8
+2023-01-09 05:01:35 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 05:01:35 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 9
+2023-01-09 05:01:35 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 05:01:35 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 10
+2023-01-09 05:01:35 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 05:01:35 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 11
+2023-01-09 05:01:35 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 05:01:35 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 12
+2023-01-09 05:01:35 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 05:01:35 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 13
+2023-01-09 05:01:35 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 05:01:35 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 14
+2023-01-09 05:01:35 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 05:01:35 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 15
+2023-01-09 05:01:35 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 05:01:35 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 16
+2023-01-09 05:01:35 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 05:01:35 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 17
+2023-01-09 05:01:54 : SELECT * FROM produtos WHERE (preco_venda >= 22 and origem = 'L')
+2023-01-09 05:01:54 : 
+2023-01-09 05:01:02 : SELECT * FROM produtos WHERE (preco_venda >= 22 and origem = 'L')
+2023-01-09 05:01:02 : DELETE FROM produtos WHERE id = :id
+2023-01-09 05:01:02 : DELETE FROM produtos WHERE id = :id
+2023-01-09 05:01:02 : DELETE FROM produtos WHERE id = :id
+2023-01-09 05:01:02 : DELETE FROM produtos WHERE id = :id
+2023-01-09 05:01:02 : DELETE FROM produtos WHERE id = :id
+2023-01-09 05:01:02 : DELETE FROM produtos WHERE id = :id
+2023-01-09 05:01:02 : DELETE FROM produtos WHERE id = :id
+2023-01-09 05:01:02 : DELETE FROM produtos WHERE id = :id
+2023-01-09 05:01:02 : DELETE FROM produtos WHERE id = :id
+2023-01-09 05:01:02 : DELETE FROM produtos WHERE id = :id
+2023-01-09 05:01:02 : DELETE FROM produtos WHERE id = :id
+2023-01-09 05:01:18 : SELECT * FROM produtos WHERE (preco_venda >= 22 and origem = 'L')
+2023-01-09 11:01:24 : SELECT * FROM produtos WHERE (preco_venda > 900 and preco_custo > 1)
+2023-01-09 11:01:24 : SELECT count(*) FROM produtos
+2023-01-09 11:01:12 : SELECT * FROM produtos WHERE (preco_venda > 20 and origem = 'C')
+2023-01-09 11:01:12 : SELECT count(*) FROM produtos
+2023-01-09 11:01:53 : SELECT * FROM produtos WHERE (preco_venda >= 22 and origem = 'C')
+2023-01-09 11:01:53 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:53 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 4
+2023-01-09 11:01:53 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:53 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 5
+2023-01-09 11:01:53 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:53 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 7
+2023-01-09 11:01:53 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:53 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 9
+2023-01-09 11:01:53 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:53 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 10
+2023-01-09 11:01:53 : SELECT * FROM produtos WHERE id = :id
+2023-01-09 11:01:53 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 11
+2023-01-10 12:01:51 : SELECT * FROM produtos WHERE (preco_venda >= 22 and origem = 'C')
+2023-01-10 12:01:51 : SELECT * FROM produtos WHERE id = :id
+2023-01-10 12:01:51 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 4
+2023-01-10 12:01:51 : SELECT * FROM produtos WHERE id = :id
+2023-01-10 12:01:51 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 5
+2023-01-10 12:01:51 : SELECT * FROM produtos WHERE id = :id
+2023-01-10 12:01:51 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 7
+2023-01-10 12:01:51 : SELECT * FROM produtos WHERE id = :id
+2023-01-10 12:01:51 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 9
+2023-01-10 12:01:51 : SELECT * FROM produtos WHERE id = :id
+2023-01-10 12:01:51 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 10
+2023-01-10 12:01:51 : SELECT * FROM produtos WHERE id = :id
+2023-01-10 12:01:51 : UPDATE produtos SET 
+			
+				descricao = :descricao,
+				estoque = :estoque,
+				preco_custo = :preco_custo,
+				preco_venda = :preco_venda,
+				codigo_barras = :codigo_barras,
+				data_cadastro = :data_cadastro,
+				origem = :origem
+				WHERE id = 11
