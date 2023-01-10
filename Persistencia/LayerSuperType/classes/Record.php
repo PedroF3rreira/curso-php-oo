@@ -143,19 +143,6 @@ abstract class Record
 		}
 		else
 		{
-<<<<<<< HEAD
-			$sql = "UPDATE " . $this->getEntity() 
-			. " SET 
-			descricao = :descricao, 
-			estoque = :estoque, 
-			preco_custo = :preco_custo,
-			preco_venda = :preco_venda,
-			codigo_barras = :codigo_barras,
-			data_cadastro = :data_cadastro,
-			origem = :origem
-
-			WHERE id = ". $this->data['id'];
-=======
 			$sql = "UPDATE " .$this->getEntity() ." SET 
 			
 				descricao = :descricao,
@@ -166,7 +153,6 @@ abstract class Record
 				data_cadastro = :data_cadastro,
 				origem = :origem
 				WHERE id = ".$this->data['id'];
->>>>>>> 8b6215c723d16bebefae8bf167ed454d4d71d670
 		}
 		
 		if($conn = Transaction::get())

@@ -14,7 +14,6 @@ try{
 
 	$c = new Criteria;
 	$c->add('preco_venda', '>=', 22);
-	$c->add('origem', '=', 'C');
 
 	$r = new Repository('produto');
 

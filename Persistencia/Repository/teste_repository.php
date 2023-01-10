@@ -13,8 +13,6 @@ try{
 	Transaction::setLogger(new LoggerTXT('logs.txt'));
 
 	$cri = new Criteria;
-	$cri->add('preco_venda', '>', 20);
-	$cri->add('origem', '=', 'C');
 
 	$repo = new Repository('Produto');
 	
