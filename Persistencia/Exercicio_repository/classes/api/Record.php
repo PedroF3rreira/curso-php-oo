@@ -5,6 +5,19 @@ abstract class Record
 	private $data;
 	protected $table;
 
+	public function __construct($id = null)
+	{
+		if($id)
+		{
+			$object = $this->load($id);
+
+			if($object)
+			{
+				$this->fromArray($this->toArray($object));
+			}
+		}
+	}
+
 	public function __set($prop , $value)
 	{
 		if($value === null)
@@ -83,16 +96,64 @@ abstract class Record
 		}
 		else
 		{
-			//aqui vai o update
+			$sql = "UPDATE {$this->table} SET " . $this->formatStringUpdate() . "WHERE id = :id";
 		}
 
-		echo $sql;
-		
 		if($conn = Transaction::get())
 		{
 			$stmt = $conn->prepare($sql);			
 			return $result = $stmt->execute($this->data);
 		}
+	}
+
+	public function delete($id = null)
+	{
+		$id = $id ? $id : $this->data['id'];
+
+		$sql = "DELETE FROM {$this->table} WHERE id = :id";
+
+		if($conn = Transaction::get())
+		{
+			$stmt = $conn->prepare($sql);
+			$result = $stmt->execute(['id' => $id]);
+
+			return $result;
+		}
+		else
+		{
+			throw new Exception('Não ha transação aberta');
+		}
+	}
+
+	public static function find( $id )
+	{	
+		//retorna classe utilizada no momento
+		$class = get_called_class();
+		$obj = new $class;
+
+		return $obj->load($id);
+	}
+
+	private function formatStringUpdate()
+	{
+		$stringFormat = '';
+			
+		foreach(array_keys($this->data) as $key => $value)
+		{
+			if($value !== 'id')
+			{
+				if(count($this->data) == $key + 1)
+				{
+					$stringFormat .= "{$value} = :{$value} ";
+				}
+				else
+				{
+					$stringFormat .= "{$value} = :{$value}, ";
+				}
+			}
+		}
+
+		return $stringFormat;
 	}
 
 }
