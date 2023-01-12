@@ -4,6 +4,7 @@ require_once'classes/api/Connection.php';
 require_once'classes/api/Transaction.php';
 require_once'classes/api/Record.php';
 require_once'classes/api/Criteria.php';
+require_once 'classes/api/Repository.php';
 require_once'classes/Evento.php';
 
 try
@@ -14,7 +15,10 @@ try
 	$criteria->add('nome', 'like', '%n%');
 	$criteria->add('nome', 'like', '%expo%', 'or');
 	var_dump($criteria->dump());
+	$repository = new Repository('Evento');
+	$eventos = $repository->load($criteria);
 
+	var_dump($eventos);
 	$evento = new Evento;
 	// $evento->nome = "Novo bob esponja";
 	// $evento->local = "rua 17 de novenbro n 254a";

@@ -1,28 +1,28 @@
 <?php 
+namespace Livro\Database;
+use Exception;
 
 class Repository
-{
-	private $activeRecord;
+{	
+	private $model;
 	
 	public function __construct($class)
 	{
-		$this->activeRecord = $class;
+		$this->model = $class;
 	}
 
 	public function load(Criteria $criteria)
-	{
-		$sql = "SELECT * FROM " . constant($this->activeRecord . '::TABLENAME');
-			
+	{	
+		$sql = "SELECT * FROM {$this->getTableName()}";
+
 		if($criteria)
 		{
 			$expression = $criteria->dump();
 
 			if($expression)
 			{
-				$sql .= " WHERE ".$expression;
+				$sql .= " WHERE {$expression}";
 			}
-
-			Transaction::log($sql);
 
 			$order = $criteria->getProperty('order');
 			$limit = $criteria->getProperty('limit');
@@ -30,78 +30,78 @@ class Repository
 
 			if($order)
 			{
-				$sql .= " ORDER BY " . $order;
+				$sql .= "ORDER BY {$order}";
 			}
 
 			if($limit)
 			{
-				$sql .= " LIMIT " . $limit;
+				$sql .= "LIMIT {$limit}";
 			}
 
 			if($offset)
 			{
-				$sql .= " OFFSET " . $offset;
+				$sql .= "OFFSET {$offset}";
 			}
 		}
-
 		if($conn = Transaction::get())
 		{
 			$result = $conn->query($sql);
-			
+
 			if($result)
 			{
 				$results = [];
 
-				while($row = $result->fetchObject($this->activeRecord))
-				{
+				while($row = $result->fetchObject($this->model))
+				{	
 					$results[] = $row;
 				}
 			}
 		}
 		else
 		{
-			throw new Exception('transação não esta aberta');
+			throw new Exception('Não têm uma transação aberta');
 		}
 
 		return $results;
-		
 	}
 
 	public function delete(Criteria $criteria)
 	{
-		$sql = "DELETE FROM " . constant( $this->activeRecord . "::TABLENAME" );
-		Transaction::log($sql);
+		$sql = "DELETE FROM {$this->model}";
+
 		if($criteria)
 		{
 			$expression = $criteria->dump();
+
 			if($expression)
 			{
-				$sql .= " WHERE " . $expression;
+				$sql .= " WHERE {$expression}";
 			}
 		}
 
 		if($conn = Transaction::get())
 		{
-			return $conn->exec($sql);
+			return $result = $conn->exec($sql);
 		}
 		else
 		{
-			throw new Exception("Transação não está aberta");
+			throw new Exception('Não têm transação aberta');
 		}
 	}
 
-	public function count(Criteria $criteria)
+	public function count(Crieria $criteria)
 	{
-		$sql = "SELECT count(*) FROM " . constant( $this->activeRecord . "::TABLENAME" );
+		$sql = "SELECT count(*) FROM {$this->table}";
 
-		Transaction::log($sql);
 		if($criteria)
 		{
 			$expression = $criteria->dump();
+
 			if($expression)
-			{	
-				$sql .= " WHERE " . $expression;
+			{
+				$sql .= "WHERE {$expression}";
 			}
+
 		}
 
 		if($conn = Transaction::get())
@@ -111,13 +111,17 @@ class Repository
 			if($result)
 			{
 				$row = $result->fetch();
-
 				return $row[0];
 			}
 		}
 		else
 		{
-			throw new Exception("Transação não está aberta");
+			throw new Exception("Não têm uma transação aberta");
 		}
+	}
+
+	public function getTableName()
+	{
+		return strtolower($this->model) . 's';
 	}
 }
