@@ -60,7 +60,29 @@ abstract class BaseRepository implements RepositoryInterface
 
 	public function delete(Criteria $criteria)
 	{
-	
+		$sql = "DELETE FROM {$this->table} ";
+
+		if($criteria)
+		{
+			$expression = $criteria;
+			if($expression)
+			{
+				$sql .= " WHERE {$expression}";
+
+				if($conn = Transaction::getConnection())
+				{
+					return$conn->exec($sql);
+				}
+				else
+				{
+					throw new Exception("Transação não está aberta");
+				}
+			}
+			else
+			{
+				throw new Exception('É necessario um criterio para executar essa ação');
+			}
+		}
 	}
 
 	public function count(Criteria $criteria)
@@ -68,10 +90,16 @@ abstract class BaseRepository implements RepositoryInterface
 	
 	}
 
-	public function create()
+	public function create($data)
 	{
-		$evento = new Evento;
-		$evento->name = 'tatata';
-		return $evento->store();
+		$class = ucfirst( str_replace('s', '', $this->table));
+		
+		$object = new  $class;
+
+		foreach($data as $key => $value)
+		{
+			$object->$key = $value;
+		}
+		$object->store();
 	}
 }

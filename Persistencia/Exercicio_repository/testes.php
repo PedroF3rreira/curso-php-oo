@@ -20,6 +20,9 @@ try
 	$er = new EventoRepository();
 	var_dump($er->load());
 	
+	$dados = ['nome' => 'teste do novo repository', 'inicio' => date('Y-m-d'), 'fim' => date('Y-m-d')];
+	$er->create($dados);
+
 	Transaction::close();
 
 }
