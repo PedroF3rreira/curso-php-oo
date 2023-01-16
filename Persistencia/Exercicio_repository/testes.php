@@ -4,6 +4,8 @@ require_once'classes/api/Connection.php';
 require_once'classes/api/Transaction.php';
 require_once'classes/api/Record.php';
 require_once'classes/api/Criteria.php';
+require_once 'classes/Contracts/RepositoryInterface.php';
+require_once 'classes/Repositories/BaseRepository.php';
 require_once 'classes/Contracts/EventoInterface.php';
 require_once 'classes/Repositories/EventoRepository.php';
 require_once'classes/Evento.php';
