@@ -37,7 +37,8 @@ class Connection
 			break;
 
 			case 'sqlite':
-				$conn = new PDO("dbname={$dbname}");
+				 $conn = new PDO("sqlite:{$dbname}");
+                 $conn->query('PRAGMA foreign_keys = ON');
 			break;
 		}
 

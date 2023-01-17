@@ -18,5 +18,5 @@ use Livro\Database\Connection;
 var_dump(Connection::open('livro'));
 
 Transaction::open('livro');
-var_dump(Pessoa::find(8));
+var_dump(Cidade::find(10));
 Transaction::close();
