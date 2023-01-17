@@ -15,7 +15,7 @@ abstract class Record
 
 			if($object)
 			{
-				$this->fromArray($this->toArray($object));
+				$this->fromArray($object->toArray());
 			}
 		}
 	}

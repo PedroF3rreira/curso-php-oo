@@ -44,7 +44,7 @@ abstract class BaseRepository implements RepositoryInterface
 			{
 				$results = [];
 
-				while($row = $result->fetchObject( ucfirst( str_replace('s', '', $this->table))) )
+				while($row = $result->fetchObject( $this->getClassName() ))
 				{	
 					$results[] = $row;
 				}
@@ -92,7 +92,7 @@ abstract class BaseRepository implements RepositoryInterface
 
 	public function create($data)
 	{
-		$class = ucfirst( str_replace('s', '', $this->table));
+		$class = $this->getClassName();
 		
 		$object = new  $class;
 
@@ -101,5 +101,10 @@ abstract class BaseRepository implements RepositoryInterface
 			$object->$key = $value;
 		}
 		$object->store();
+	}
+
+	private function getClassName()
+	{
+		return ucfirst( str_replace('s', '', $this->table));
 	}
 }
