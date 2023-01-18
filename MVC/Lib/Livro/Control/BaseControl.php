@@ -8,7 +8,7 @@ abstract class BaseControl
 	{
 		if($_GET)
 		{
-			$method = isset($_GET['method'])?$_GET['method']:null;
+			$method = isset($_GET['method']) ? $_GET['method'] : null;
 			
 			if(method_exists($this, $method))
 			{

@@ -3,7 +3,7 @@ use Livro\Database\Transaction;
 use Livro\Database\Repository;
 use Livro\Database\Criteria;
 /**
- * serviços são utilizados para disponibilizar recurssos para o mundo externo
+ * serviços são utilizados para disponibilizar recurssos para o mundo externo app fora de nossa aplicação
  */
 class PessoaServices
 {
@@ -30,7 +30,7 @@ class PessoaServices
 		}
 		catch(Exception $e)
 		{
-			echo $e->getMessage();
+			return $pessoa_array = $e->getMessage();
 		}
 	}
 }
