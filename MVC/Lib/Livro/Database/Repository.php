@@ -30,17 +30,17 @@ class Repository
 
 			if($order)
 			{
-				$sql .= "ORDER BY {$order}";
+				$sql .= " ORDER BY {$order} ";
 			}
 
 			if($limit)
 			{
-				$sql .= "LIMIT {$limit}";
+				$sql .= " LIMIT {$limit} ";
 			}
 
 			if($offset)
 			{
-				$sql .= "OFFSET {$offset}";
+				$sql .= " OFFSET {$offset} ";
 			}
 		}
 		if($conn = Transaction::get())
@@ -122,6 +122,6 @@ class Repository
 
 	public function getTableName()
 	{
-		return strtolower($this->model) . 's';
+		return strtolower($this->model);
 	}
 }

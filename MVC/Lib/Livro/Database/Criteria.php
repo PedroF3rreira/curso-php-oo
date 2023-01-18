@@ -48,7 +48,7 @@ class Criteria
 
 	public function setProperty($property, $value)
 	{
-		$this->properties[$property] = $property;
+		$this->properties[$property] = $value;
 	}
 
 	public function transform($value)
