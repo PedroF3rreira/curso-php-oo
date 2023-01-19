@@ -17,6 +17,9 @@ $app->addDirectory('App/Control');
 $app->addDirectory('App/Model');
 $app->register();
 
+$loader = require 'vendor/autoload.php';
+$loader->register();
+
 //método pega qual classe será instanciada pelo atributo passado na url
 if( $_GET )
 {
@@ -28,3 +31,5 @@ if( $_GET )
 		$pagina->show();
 	}
 }
+
+echo '<link rel="stylesheet" href="App/Templates/css/bootstrap.min.css"/>';
