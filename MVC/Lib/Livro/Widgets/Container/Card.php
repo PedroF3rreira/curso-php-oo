@@ -31,7 +31,7 @@ class Card extends Element
 		}
 
 		$this->body = new Element('div');
-		$this->body->class = 'card-text';
+		$this->body->class = 'card-body';
 		parent::add($this->body);
 
 		$this->footer = new Element('div');

@@ -5,10 +5,12 @@ use Livro\Widgets\Base\Element;
 
 abstract class BaseControl extends Element
 {
+	//torna o base control numa div
 	public function __construct()
 	{
 		parent::__construct('div');
 	}
+	
 	//controla chamada dos métodos de controle
 	public function show()
 	{
