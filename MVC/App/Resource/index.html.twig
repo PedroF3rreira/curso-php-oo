@@ -6,18 +6,22 @@
 	<title>{{ title }}</title>
 </head>
 <body>
-	<h1>{{ title }}</h1>
-	<table class="table">
-		<thead>
-			{% for column in columns %}
-				<th>{{ column }}</th>
-			{% endfor %}
-		</thead>
-		<tbody>
-			
-			{% include 'components/item.html.twig' with {'itens': pessoas} %}
-			
-		</tbody>
-	</table>
+	<div class="container">
+		<h1>{{ title }}</h1>
+		<table class="table">
+			<thead>
+				{% for column in columns %}
+					{% if column != "id_cidade" %}
+					<th scope="col">{{ column }}</th>
+					{% endif %}
+				{% endfor %}
+			</thead>
+			<tbody>
+				
+				{% include 'components/item.html.twig' with {'itens': pessoas} %}
+				
+			</tbody>
+		</table>	
+	</div>
 </body>
 </html>
