@@ -33,7 +33,7 @@ class BootstrapFormWrapper
 		$form = new Element('form');
 		$form->enctype = 'multipart/form-data';
 		$form->type = 'post';
-		$form = $this->decorated->getName();
+		$form->name = $this->decorated->getName();
 		$form->width = '100%';
 
 		foreach($this->decorated->fields as $field)
@@ -54,6 +54,20 @@ class BootstrapFormWrapper
 			$form->add($group);
 		}
 
+		$footer = new Element('div');
+
+		foreach($this->decorated->getActions as $label => $action )
+		{
+			$button = new Button;
+			$button->setAction($action, strtolower($label));
+			$button->class = 'btn btn-dark';
+			$button->setFormName($this->decorated->getName());
+			$footer->add($button);
+		}
+
+		$card = new Card($this->decorated->getTitle());
+		$card->add($form);
+		$card->addFooter($footer);
 		$form->show();
 	}
 }
