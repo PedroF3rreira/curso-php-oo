@@ -1,7 +1,7 @@
 <?php 
-namespace Livro\Form;
+namespace Livro\Widgets\Form;
 
-class FormElementInterface
+interface FormElementInterface
 {
 	public function setName($value);
 	
@@ -10,5 +10,7 @@ class FormElementInterface
 	public function getValue();
 	
 	public function setValue($value);
+
+	public function show();
 	
 }

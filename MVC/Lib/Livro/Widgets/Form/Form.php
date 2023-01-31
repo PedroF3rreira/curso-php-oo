@@ -1,5 +1,7 @@
 <?php 
-namespace Livro\Form\Form;
+namespace Livro\widgets\Form;
+
+use Livro\Control\ActionInterface;
 
 class Form
 {
@@ -10,7 +12,7 @@ class Form
 
 	public function __construct($name = 'My form')
 	{
-		$this->name = $name;
+		$this->setName($name);
 	}
 
 	public function getName()
@@ -28,18 +30,19 @@ class Form
 		return $this->title;
 	}
 
-	public function setTitle($value)
+	public function setTitle($title)
 	{
-		$this->title = $title
+		$this->title = $title;
 	}
 	
 	public function addField($label, formElementInterface $object, $size = '100%')
 	{
 		$object->setSize($size);
-		$this->fileds[ $object->getName() ] = $object;
+		$object->setLabel($label);
+		$this->fields[ $object->getName() ] = $object;
 	}
 
-	public function addActions(ActionInterface $action)
+	public function addAction($label, ActionInterface $action)
 	{
 		$this->actions[ $label ] = $action;
 	}
@@ -84,7 +87,7 @@ class Form
 		{
 			if($name && isset($object->$name))
 			{
-				$field->setValue($object->$name)
+				$field->setValue($object->$name);
 			}
 		}	
 	}
