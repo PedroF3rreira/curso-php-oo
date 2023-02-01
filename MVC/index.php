@@ -30,6 +30,9 @@ if( $_GET )
 		$pagina = new $class;
 		$pagina->show();
 	}
+	else{
+		echo "Oppss! Pagina não Encontrada";
+	}
 }
 
 echo '<link rel="stylesheet" href="App/Templates/css/bootstrap.min.css"/>';

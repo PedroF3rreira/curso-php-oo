@@ -70,7 +70,7 @@ class Form
 		foreach($this->fields as $name => $field)
 		{
 			$value = isset($_POST[$name]) ? $_POST[$name] : '';
-			$object->name = $value;
+			$object->$name = $value;
 		}
 
 		return $object;
