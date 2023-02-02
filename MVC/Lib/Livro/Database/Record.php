@@ -106,7 +106,7 @@ abstract class Record
 		{
 			$stmt = $conn->prepare($sql);			
 			$stmt->execute($this->data);
-			return $conn->lastInsertId() !== 0 ?$conn->lastInsertId() : $this->data->id;
+			return $conn->lastInsertId();
 		}
 	}
 
