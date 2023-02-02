@@ -98,14 +98,15 @@ abstract class Record
 		}
 		else
 		{
-			$sql = "UPDATE {$this->table} SET " . $this->formatStringUpdate() . "WHERE id = :id";
+			$sql = "UPDATE {$this->table} SET " . $this->formatStringUpdate() . " WHERE id = :id";
+			
 		}
 
 		if($conn = Transaction::get())
 		{
 			$stmt = $conn->prepare($sql);			
 			$stmt->execute($this->data);
-			return $conn->lastInsertId();
+			return $conn->lastInsertId() !== 0 ?$conn->lastInsertId() : $this->data->id;
 		}
 	}
 
@@ -145,7 +146,7 @@ abstract class Record
 		{
 			if($value !== 'id')
 			{
-				if(count($this->data) == $key + 1)
+				if(count($this->data) == $key + 2)
 				{
 					$stringFormat .= "{$value} = :{$value} ";
 				}

@@ -33,7 +33,7 @@ class Combo extends Field implements FormElementInterface
         
         // cria uma TAG <option> com um valor padrão
         $option = new Element('option');
-        $option->add('');
+        $option->add('Selecione uma opção');
         $option->value = '0';    // valor da TAG
         
         // adiciona a opção à combo

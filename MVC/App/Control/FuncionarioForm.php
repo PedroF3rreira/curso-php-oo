@@ -59,7 +59,8 @@ class FuncionarioForm extends BaseControl
 		]);
 		$this->form->addField('Contratacao:',$contratacao, 20);
 
-
+		$data = $this->form->getData();
+		
 		$this->form->addAction('Cadastrar', new Action([$this, 'singUp']));
 
 		parent::add($this->form);
@@ -80,15 +81,22 @@ class FuncionarioForm extends BaseControl
 			$funcionario->departamento = $data->departamento;
 			$funcionario->idiomas = implode(',',$data->idiomas);
 			$funcionario->contratacao = $data->contratacao;
+			
+			if($data->id)
+			{
+				$funcionario->id = $data->id;
+			}
 
 			if(empty($funcionario->email))
 			{	
 				$this->form->setData($data);
 				throw new Exception("O campo email é obrigatório");
 			}	
-
-			$data->id = $funcionario->store();
 			
+			$id = $funcionario->store();
+			
+			$data->id??$id;
+
 			$this->form->setData($data);
 			
 			new Message('info', 'Cadastro realizado com suscesso');
@@ -98,6 +106,34 @@ class FuncionarioForm extends BaseControl
 		catch (Exception $e) 
 		{
 			new Message('error', $e->getMessage());	
+		}
+	}
+
+	public function onEdit($params)
+	{
+		try
+		{
+			Transaction::open('livro');
+			
+			if(!empty($params['id']))
+			{
+				$funcionario = new Funcionario($params['id']);
+				if($funcionario)
+				{
+					if($funcionario->idiomas)
+					{
+						$funcionario->idiomas = explode(',', $funcionario->idiomas);
+					}
+					
+					$this->form->setData($funcionario);
+				}
+			}
+			
+			Transaction::close();
+		}
+		catch(Exception $e)
+		{
+			new Message('error', $e->getMessage());
 		}
 	}
 }
