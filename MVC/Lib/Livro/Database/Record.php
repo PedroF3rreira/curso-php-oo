@@ -104,7 +104,8 @@ abstract class Record
 		if($conn = Transaction::get())
 		{
 			$stmt = $conn->prepare($sql);			
-			return $result = $stmt->execute($this->data);
+			$stmt->execute($this->data);
+			return $conn->lastInsertId();
 		}
 	}
 

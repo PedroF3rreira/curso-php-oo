@@ -83,7 +83,7 @@ abstract class Field implements FormElementInterface
 
 	public function setEditable($editable)
 	{
-		$this->editable = $editable;
+		$this->editable = strtolower($editable);
 	}
 
 	public function getEditable()

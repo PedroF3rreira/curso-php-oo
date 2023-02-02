@@ -36,6 +36,7 @@ class ContatoForm extends BaseControl
 			'3' => 'autros'
 		]);
 
+		$conteudo->setSize(300, 80);
 
 		$this->form->addField('Nome:', $nome);
 		$this->form->addField('Email:', $email);
@@ -46,6 +47,8 @@ class ContatoForm extends BaseControl
 		$this->form->addAction( 'Salvar', new Action([$this, 'onSave']) );
 
 		parent::add($this->form);
+
+		$this->onLoad();
 	}
 
 	public function onSave()
@@ -56,17 +59,30 @@ class ContatoForm extends BaseControl
 	public function onSend($params)
 	{
 		$data = $this->form->getData();
+		$this->form->setData($data);
 		var_dump($data);
 		try
 		{
 			if(empty($data->email))
 			{
 				throw new Exception("Email vazio campo obrigatório");
+			}
+
+			if(empty($data->conteudo))
+			{
+				throw new Exception("campo conteudo vazio campo obrigatório");	
 			}	
 		}
 		catch(Exception $e)
 		{
 			new Message('error', $e->getMessage());
 		}
+	}
+
+	public function onLoad()
+	{
+		$data = new StdClass;
+		$data->assunto = 1;
+		$this->form->setData($data);
 	}
 }

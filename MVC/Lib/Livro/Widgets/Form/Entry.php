@@ -14,7 +14,7 @@ class Entry extends Field implements FormElementInterface
 		$tag->type = 'text';
 		$tag->style = "width: {$this->size}";
 
-		if(!parent::getEditable())
+		if(parent::getEditable() === 'false')
 		{
 			$tag->readonly = '1';
 		}

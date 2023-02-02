@@ -20,7 +20,7 @@ class Combo extends Field implements FormElementInterface
     {
         $this->items = $items;
     }
-    
+
     /**
      * Exibe o widget na tela
      */
