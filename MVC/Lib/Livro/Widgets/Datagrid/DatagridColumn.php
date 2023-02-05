@@ -55,7 +55,7 @@ class DatagridColumn
 
 	public function getTransform()
 	{
-		return $this->transform;
+		return $this->trasnform;
 	}
 
 }

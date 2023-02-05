@@ -17,10 +17,10 @@ class ContatoList extends BaseControl
 
 		$this->datagrid = new BootstarpDatagridWrapper( new Datagrid );
 
-		$code = new DatagridColumn('id', 'Codigo:', 'center', '10%');
-		$name = new DatagridColumn('name', 'Nome:', 'center', '20%');
-		$email = new DatagridColumn('email', 'Email:', 'center', '20%');
-		$assunto = new DatagridColumn('content', 'Assunto:', 'center', '30%');
+		$code = new DatagridColumn('id', 'Codigo:', 'left', '');
+		$name = new DatagridColumn('nome', 'Nome:', 'left', '');
+		$email = new DatagridColumn('email', 'Email:', 'left', '');
+		$assunto = new DatagridColumn('assunto', 'Assunto:', 'left', '');
 
 		$this->datagrid->addColumn($code);
 		$this->datagrid->addColumn($name);
@@ -34,7 +34,28 @@ class ContatoList extends BaseControl
 
 	public function onReload()
 	{
-			
+			 $this->datagrid->clear();
+        
+        $m1 = new stdClass;
+        $m1->id   = 1;
+        $m1->nome = 'Maria';
+        $m1->email = 'maria@asdfasf';
+        $m1->assunto = 'Dúvida 1';
+        $this->datagrid->addItem($m1);
+        
+        $m2 = new stdClass;
+        $m2->id   = 2;
+        $m2->nome = 'Pedro';
+        $m2->email = 'pedro@asdfasf';
+        $m2->assunto = 'Dúvida 2';
+        $this->datagrid->addItem($m2);
+        
+        $m3 = new stdClass;
+        $m3->id   = 3;
+        $m3->nome = 'José';
+        $m3->email = 'jose@asdfasf';
+        $m3->assunto = 'Dúvida 3';
+        $this->datagrid->addItem($m3);
 	}
 
 	public function onDelete()

@@ -103,12 +103,14 @@ class BootstarpDatagridWrapper
 			{
 				$button = new Element('a');
 
-				$url = $actions['action']->serialize();
+				$url = $action['action']->serialize();
 				$label = $action['label'];
-				$name = $action['name'];
+				
 				$image = $action['image'];
 				$field = $action['field'];
 				
+				$key = $item->$field;
+
 				$button->href = "$url&key={$key}&{$field}={$key}";
 
 				if($image)
