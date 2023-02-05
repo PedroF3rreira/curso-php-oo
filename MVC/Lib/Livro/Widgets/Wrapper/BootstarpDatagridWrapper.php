@@ -32,5 +32,132 @@ class BootstarpDatagridWrapper
 		$table = new Element('table');
 		$table->class = "table table-striped table-hover";
 
+		$thead = new Element('thead');
+		$table->add($thead);
+		$this->createHeaders($thead);
+
+		$tbody = new Element('tbody');
+		$table->add($tbody);
+
+		$items = $this->decorated->getItems();
+
+		foreach ($items as $item) {
+			$this->createItem($tbody, $item
+			);
+		}
+
+		$card = new Card;
+		$card->add($table);
+		$card->show();
+	}
+
+	public function createHeaders($thead)
+	{
+		$row = new Element('tr');
+		$thead->add($row);
+
+		$actions = $this->decorated->getActions();
+		$columns = $this->decorated->getColumns();
+
+		if($actions)
+		{
+			foreach($actions as $action)
+			{
+				$cell = new Element('th');
+				$cell->width = '40px';
+				$row->add($cell);
+			}
+		}
+
+		if($columns)
+		{
+			foreach($columns as $column)
+			{
+				$cell = new Element('th');
+				$cell->add($column->getLabel());
+				$cell->style = 'align-text: '.$column->getAlign();
+				$cell->width = $column->getWidth();
+
+				if($column->getAction())
+				{
+					$url = $column->getAction()->serialize();
+					$cell->onclick = "document.location='$url'";
+				}
+
+				$row->add($cell);
+			}
+		}
+	}
+
+	public function createItem($tbody, $item)
+	{
+		$row = new Element('tr');
+		$tbody->add($row);
+
+		$actions = $this->decorated->getActions();
+		$columns = $this->decorated->getColumns();
+
+		if($actions)
+		{
+			foreach($actions as $action)
+			{
+				$button = new Element('a');
+
+				$url = $actions['action']->serialize();
+				$label = $action['label'];
+				$name = $action['name'];
+				$image = $action['image'];
+				$field = $action['field'];
+				
+				$button->href = "$url&key={$key}&{$field}={$key}";
+
+				if($image)
+				{
+					$i = new Element('i');
+					$i->class = $image;
+					$i->title = $label;
+					$i->add('');
+
+					$button->add($i);
+				}
+				else
+				{
+					$button->add($label);
+				}
+
+
+				$td = new Element('td');
+				$td->add($button);
+				$td->align = 'center';
+
+				$row->add($td);
+			}
+		}
+
+		if($columns)
+		{
+			foreach($columns as $column)
+			{
+				$name = $column->getName();
+				$label = $column->getLabel();
+				$align = $column->getAlign();
+				$width = $column->getWidth();
+				$function = $column->getTransform();
+
+				$data = $item->$name;
+
+				if($function)
+				{
+					$data = class_user_function($function, $data);
+				}
+
+				$td = new Element('td');
+				$td->add($data);
+				$td->align = $align;
+				$td->width = $width;
+
+				$row->add($td);
+			}
+		}
 	}
 }

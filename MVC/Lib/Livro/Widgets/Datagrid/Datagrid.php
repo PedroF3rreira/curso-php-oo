@@ -1,5 +1,6 @@
 <?php 
 namespace Livro\Widgets\Datagrid;
+use Livro\Control\ActionInterface;
 
 class Datagrid
 {
@@ -15,7 +16,7 @@ class Datagrid
 	}
 	public function addColumn(DatagridColumn $object)
 	{
-		$this->columns[] = $object
+		$this->columns[] = $object;
 	}
 
 	public function addAction($label, ActionInterface $action, $field, $image = null)
