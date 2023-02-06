@@ -19,32 +19,41 @@ class Question
     function __construct($message, Action $action_yes, Action $action_no = NULL)
     {
         $div = new Element('div');
-        $div->class = 'alert alert-warning question';
+        $div->class = 'alert alert-warning question mx-auto container';
         
         // converte os nomes de métodos em URL's
         $url_yes = $action_yes->serialize();
         
         $link_yes = new Element('a');
         $link_yes->href = $url_yes;
-        $link_yes->class = 'btn btn-outline-primary';
-        $link_yes->style = 'float:right';
+        $link_yes->class = 'btn btn-outline-dark';
+        $link_yes->style = '';
         $link_yes->add('Sim');
         
-        $message .= '&nbsp;' . $link_yes;
+        //$message .= '&nbsp;' . $link_yes;
         if ($action_no)
         {
             $url_no = $action_no->serialize();
             
             $link_no = new Element('a');
             $link_no->href = $url_no;
-            $link_no->class = 'btn btn-outline-primary';
-            $link_no->style = 'float:right';
+            $link_no->class = 'btn btn-outline-primary ml-2';
             $link_no->add('Não');
             
-            $message .= $link_no;
+            //$message .= $link_no;
         }
+        $p = new Element('p');
+        $p->class = 'col-10 mr-4';
+        $p->add($message);
         
-        $div->add($message);
+        $row = new Element('div');
+        $row->class = 'row';
+
+        $row->add($p);
+        $row->add($link_yes);
+        $row->add($link_no);
+
+        $div->add($row);
         $div->show();
     }
 }

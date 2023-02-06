@@ -6,6 +6,7 @@ use Livro\Widgets\Datagrid\DatagridColumn;
 use Livro\Control\BaseControl;
 use Livro\Control\Action;
 use Livro\Widgets\Dialog\Message;
+use Livro\Widgets\Dialog\Question;
 use Livro\Database\Transaction;
 use Livro\Database\Criteria;
 use Livro\Database\Repository;
@@ -18,7 +19,7 @@ class ContatoList extends BaseControl
 	public function __construct()
 	{
 		parent::__construct();
-
+		$this->class = 'container';
 		$this->datagrid = new BootstarpDatagridWrapper( new Datagrid );
 
 		$code = new DatagridColumn('id', 'Codigo:', 'left', '');
@@ -67,13 +68,21 @@ class ContatoList extends BaseControl
         	new Message('error', $e->getMessage());
         }
 	}
+	
+	public function onDelete($param)
+	{
+		$action = new Action([$this, 'delete']);
+		$action2 = new Action([$this, 'onReload']);
+		$action->setParameter('id', $param['id']);
+		new Question("Você realmente deseja excluir este registro", $action, $action2);
+	}
 
-	public function onDelete($params)
+	public function delete($param)
 	{
 			try
 			{
 				Transaction::open('livro');
-				$pessoa = Pessoa::find($params['id']);
+				$pessoa = Pessoa::find( $param['id']	);
 
 				if($pessoa)
 				{
@@ -82,8 +91,8 @@ class ContatoList extends BaseControl
 				}
 
 				Transaction::close();
-				$this->onReload();
 				new Message('info', 'deletado com exito');
+				$this->onReload();
 			}
 			catch(Exception $e)
 			{	

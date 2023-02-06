@@ -12,19 +12,19 @@ class Message extends Element
 		switch($type)
 		{
 			case 'info':
-				$div->class = 'alert alert-info';				
+				$div->class = 'alert alert-info container';				
 			break;
 			
 			case 'error':
-				$div->class = 'alert alert-danger';
+				$div->class = 'alert alert-danger container';
 			break;
 
 			case 'success':
-				$div->class = 'alert alert-success';
+				$div->class = 'alert alert-success container';
 			break;
 
 			default:
-			$div->class = 'alert alert-info';
+			$div->class = 'alert alert-info container';
 			break;
 		}
 
