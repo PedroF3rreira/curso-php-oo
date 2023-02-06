@@ -9,7 +9,6 @@ use Livro\Widgets\Dialog\Message;
 use Livro\Database\Transaction;
 use Livro\Database\Criteria;
 use Livro\Database\Repository;
-use Livro\Model\Pessoa;
 
 class ContatoList extends BaseControl
 {
@@ -73,22 +72,25 @@ class ContatoList extends BaseControl
 	{
 			try
 			{
-				if($params['id'])
+				Transaction::open('livro');
+				$pessoa = Pessoa::find($params['id']);
+
+				if($pessoa)
 				{
-					Transaction::open('livro');
-					$criteria = new Criteria;
-					$criteria->add('id', '=', $params['id']);
-
-					$repository = new Repository('Pessoa');
-					$repository->delete($criteria);
-
-					Transaction::close();
+						
+					$pessoa->delete();
 				}
+
+				Transaction::close();
+				$this->onReload();
+				new Message('info', 'deletado com exito');
 			}
 			catch(Exception $e)
 			{	
 				new Message('error', $e->getMessage());
 			}
+
+
 	}
 
 	public function onEdite()

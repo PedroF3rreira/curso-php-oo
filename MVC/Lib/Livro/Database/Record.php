@@ -112,7 +112,7 @@ abstract class Record
 
 	public function delete($id = null)
 	{
-		$id = $id ? $id : $this->data['id'];
+		$id = $id ? $id : $this->id;
 
 		$sql = "DELETE FROM {$this->table} WHERE id = :id";
 
@@ -120,7 +120,6 @@ abstract class Record
 		{
 			$stmt = $conn->prepare($sql);
 			$result = $stmt->execute(['id' => $id]);
-
 			return $result;
 		}
 		else
