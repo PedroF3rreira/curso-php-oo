@@ -5,6 +5,11 @@ use Livro\Widgets\Datagrid\Datagrid;
 use Livro\Widgets\Datagrid\DatagridColumn;
 use Livro\Control\BaseControl;
 use Livro\Control\Action;
+use Livro\Widgets\Dialog\Message;
+use Livro\Database\Transaction;
+use Livro\Database\Criteria;
+use Livro\Database\Repository;
+use Livro\Model\Pessoa;
 
 class ContatoList extends BaseControl
 {
@@ -20,12 +25,12 @@ class ContatoList extends BaseControl
 		$code = new DatagridColumn('id', 'Codigo:', 'left', '');
 		$name = new DatagridColumn('nome', 'Nome:', 'left', '');
 		$email = new DatagridColumn('email', 'Email:', 'left', '');
-		$assunto = new DatagridColumn('assunto', 'Assunto:', 'left', '');
+		$telefone = new DatagridColumn('telefone', 'Telefone:', 'left', '');
 
 		$this->datagrid->addColumn($code);
 		$this->datagrid->addColumn($name);
 		$this->datagrid->addColumn($email);
-		$this->datagrid->addColumn($assunto);
+		$this->datagrid->addColumn($telefone);
 		$this->datagrid->addAction('Delete', new Action([$this, 'onDelete']), 'id');
 		$this->datagrid->addAction('Edite', new Action([$this, 'onEdite']), 'id');
 
@@ -34,37 +39,66 @@ class ContatoList extends BaseControl
 
 	public function onReload()
 	{
-			 $this->datagrid->clear();
+		$this->datagrid->clear();
         
-        $m1 = new stdClass;
-        $m1->id   = 1;
-        $m1->nome = 'Maria';
-        $m1->email = 'maria@asdfasf';
-        $m1->assunto = 'Dúvida 1';
-        $this->datagrid->addItem($m1);
-        
-        $m2 = new stdClass;
-        $m2->id   = 2;
-        $m2->nome = 'Pedro';
-        $m2->email = 'pedro@asdfasf';
-        $m2->assunto = 'Dúvida 2';
-        $this->datagrid->addItem($m2);
-        
-        $m3 = new stdClass;
-        $m3->id   = 3;
-        $m3->nome = 'José';
-        $m3->email = 'jose@asdfasf';
-        $m3->assunto = 'Dúvida 3';
-        $this->datagrid->addItem($m3);
+        try
+        {
+        	Transaction::open('livro');
+        	$criteria = new Criteria;
+        	$repository = new Repository('Pessoa');
+        	$pessoas = $repository->load($criteria);
+        	
+        	if($pessoas)
+        	{
+        		foreach($pessoas as $pessoa)
+	        	{
+        			$this->datagrid->addItem($pessoa);
+    	    	}
+
+        	}
+        	else
+        	{
+        		new Message('info', 'não têm dados disponiveis');
+        	}
+        	
+        	Transaction::close();
+        }
+        catch(Exception $e)
+        {
+        	new Message('error', $e->getMessage());
+        }
 	}
 
-	public function onDelete()
+	public function onDelete($params)
 	{
-			// code...
+			try
+			{
+				if($params['id'])
+				{
+					Transaction::open('livro');
+					$criteria = new Criteria;
+					$criteria->add('id', '=', $params['id']);
+
+					$repository = new Repository('Pessoa');
+					$repository->delete($criteria);
+
+					Transaction::close();
+				}
+			}
+			catch(Exception $e)
+			{	
+				new Message('error', $e->getMessage());
+			}
 	}
 
 	public function onEdite()
 	{
 			// code...
 	}	
+
+	public function show()
+	{
+		$this->onReload();
+		parent::show();
+	}
 }

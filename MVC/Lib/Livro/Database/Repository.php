@@ -67,7 +67,7 @@ class Repository
 
 	public function delete(Criteria $criteria)
 	{
-		$sql = "DELETE FROM {$this->model}";
+		$sql = "DELETE FROM {$this->getTableName()}";
 
 		if($criteria)
 		{
@@ -78,7 +78,7 @@ class Repository
 				$sql .= " WHERE {$expression}";
 			}
 		}
-
+		echo $sql;
 		if($conn = Transaction::get())
 		{
 			return $result = $conn->exec($sql);
@@ -91,7 +91,7 @@ class Repository
 
 	public function count(Crieria $criteria)
 	{
-		$sql = "SELECT count(*) FROM {$this->table}";
+		$sql = "SELECT count(*) FROM {$this->getTableName()}";
 
 		if($criteria)
 		{
